@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: ;
+    font-style: italic;
+}
+
+header {
+    height: 5rem;
+    background-color: hsl(150, 70%, 36%);
+    padding-left: 5%;
+    padding-right: 5%;
+
+    display: flex;
+    align-items: center;
+}
+
+.toolbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    color: hsl(150, 70%, 66%);
+    width: 1em;
+    font-size: small;
+    text-decoration: none;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
