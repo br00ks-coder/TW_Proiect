@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <script src="register.js"></script>
+    <title>Web Gardening</title>
+</head>
+
+<body>
+
+<div id="background"
+     style='
+     top:0;
+     width: 100%;
+     height: 200vh;
+     background-image: url("resources/background_lavender.jpeg");
+     position: absolute;
+     filter: blur(4px);
+     background-repeat: repeat;
+     z-index: -1;'
+></div>
+
+<header class="header">
+    <a class="logo" href="index.html">
+        <img class="logo" id="logo" src="resources/Logo.png" alt="logo" width="140em" height="70em">
+    </a>
+
+    <h1 class="title">John Doe's Web Garden</h1>
+
+    <nav class="nav_bar">
+        <ul class="login_list">
+            <a href="login.html#"><li class="log_in">Log In</li></a>
+            </ul>
+    </nav>
+    <div class="horizontal_rule"></div>
+    <nav class="nav_list">
+        <ul>
+            <a href="about.html"><li class="about_us">About Us</li></a>
+            <a href="contact.html"><li class="contact">Contact Us</li></a>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+    
+
+<form>
+    <h2>Forum Registration</h2>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username2" name="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password2" name="password">
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password2" name="confirm-password">
+    </div>
+    <button type="button" onclick="register()">Register</button>
+     <div id="message" style="z-index: 2;"></div>
+  
+  </form>
+  
+ 
+
+</main>
+
+<footer class = "footer">
+</footer>
+</body >
+</html>
