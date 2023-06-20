@@ -1,3 +1,4 @@
+
 main{
   height: 150vh;
 
@@ -9,8 +10,8 @@ main{
   padding-left: 3%;
   padding-right: 3%;
   border-radius: 3%;
-
-  background-color:hsl(20, 0%, 92%);
+  padding-bottom: 2%;
+  background-color:hsl(80,0%, 77%);
   color: hsl(220, 17%, 27%);
   box-shadow: 1px 1px 10px 4px rgb(0, 0, 0);
 
@@ -106,7 +107,13 @@ border: none;
 .contact-div textarea {
 height: 50px;
 }
-
+#profileForm{
+  background-color: lightgray;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  
+}
 .contact-div button {
 background-color: #4CAF50;
 color: white;
