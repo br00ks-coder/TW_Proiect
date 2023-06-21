@@ -16,7 +16,6 @@ if (!$dbconn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/GeneralStyle.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script
       src="https://kit.fontawesome.com/fb7068e0f1.js"
@@ -47,7 +46,7 @@ if (!$dbconn) {
   <nav class="nav_bar">
         <ul class="login_list">
             <!-- HTML code -->
-                <a href="logout.php">
+                <a href="php/logout.php">
                     <li class="logout">Log out</li>
                 </a>
            
@@ -63,95 +62,85 @@ if (!$dbconn) {
 </div>
 
 <script>
-
-$(document).ready(function() {
-    // Function to fetch user data
-    function fetchUserData() {
-        $.ajax({
-            url: "fetch_users.php",
-            method: "GET",
-            dataType: "html",
-            success: function(response) {
-                // Update the user container div with the fetched data
-                $("#user-container").html(response);
-            },
-            error: function(xhr, status, error) {
-                console.log("AJAX request error:", error);
-            }
-        });
+function fetchUserData() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "./php/fetch_users.php", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = xhr.responseText;
+        document.getElementById("user-container").innerHTML = response;
+      } else {
+        console.log("AJAX request error:", xhr.status);
+      }
     }
+  };
+  xhr.send();
+}
 
-    // Function to handle password change form submission
-    function handlePasswordChangeFormSubmit() {
-        var form = $(this);
-        var url = form.attr("action");
-        var formData = form.serialize(); // Serialize form data
+function handlePasswordChangeFormSubmit(event) {
+  event.preventDefault();
 
-        $.ajax({
-            url: url,
-            method: "POST",
-            data: formData,
-            success: function(response) {
-                // Display success message
-                console.log(response);
+  var form = event.target;
+  var url = form.getAttribute("action");
+  var formData = new FormData(form);
 
-                // Fetch user data after successful password change
-                fetchUserData();
-            },
-            error: function(xhr, status, error) {
-                console.log("AJAX request error:", error);
-            }
-        });
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = xhr.responseText;
+        console.log(response);
+        fetchUserData();
+      } else {
+        console.log("AJAX request error:", xhr.status);
+      }
     }
+  };
+  xhr.send(formData);
+}
 
-    // Function to handle delete user form submission
-    function handleDeleteUserFormSubmit() {
-        var form = $(this);
-        var url = form.attr("action");
-        var formData = form.serialize(); // Serialize form data
+function handleDeleteUserFormSubmit(event) {
+  event.preventDefault();
 
-        $.ajax({
-            url: url,
-            method: "POST",
-            data: formData,
-            success: function(response) {
-                // Display success message
-                console.log(response);
+  var form = event.target;
+  var url = form.getAttribute("action");
+  var formData = new FormData(form);
 
-                // Fetch user data after successful user deletion
-                fetchUserData();
-            },
-            error: function(xhr, status, error) {
-                console.log("AJAX request error:", error);
-            }
-        });
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = xhr.responseText;
+        console.log(response);
+        fetchUserData();
+      } else {
+        console.log("AJAX request error:", xhr.status);
+      }
     }
+  };
+  xhr.send(formData);
+}
 
-    // Call fetchUserData initially
-    fetchUserData();
+function pollUserData() {
+  fetchUserData();
+  setTimeout(pollUserData, 5000);
+}
 
-    // Polling function to fetch user data at regular intervals
-    function pollUserData() {
-        fetchUserData(); // Call fetchUserData
+fetchUserData();
+pollUserData();
 
-        // Set the polling interval (e.g., every 5 seconds)
-        setTimeout(pollUserData, 5000);
-    }
-
-    // Start the polling process
-    pollUserData();
-
-    // Event listener for password change form submission
-    $(document).on("submit", "#change-password-form", function(event) {
-        event.preventDefault(); // Prevent form submission
-        handlePasswordChangeFormSubmit.call(this);
-    });
-
-    // Event listener for delete user form submission
-    $(document).on("submit", "#delete-user-form", function(event) {
-        event.preventDefault(); // Prevent form submission
-        handleDeleteUserFormSubmit.call(this);
-    });
+document.addEventListener("submit", function(event) {
+  var target = event.target;
+  if (target.getAttribute("id") === "change-password-form") {
+    event.preventDefault();
+    handlePasswordChangeFormSubmit(event);
+  } else if (target.getAttribute("id") === "delete-user-form") {
+    event.preventDefault();
+    handleDeleteUserFormSubmit(event);
+  }
 });
 
 </script>
