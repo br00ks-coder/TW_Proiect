@@ -22,12 +22,10 @@
                 <a href="../profile.php">
                     <li class="profile">Profile</li>
                 </a>
-                <a href="../logout.php">
+                <a href="../php/logout.php">
                     <li class="logout">Log out</li>
                 </a>
-                <a href ="../help.php" >
-                    <li class="contact_button">Get Help </li>
-                </a>
+
                 </ul>
             <?php else: ?>
                 <!-- Display content for non-logged-in users -->
