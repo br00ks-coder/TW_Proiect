@@ -2,18 +2,19 @@
 // Start the session
 session_start();
 $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
-$query = "SELECT * FROM my_harvests"; $result = pg_query($dbconn, $query);
+$query = "SELECT * FROM my_harvests";
+$result = pg_query($dbconn, $query);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/GeneralStyle.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/check.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/GeneralStyle.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/check.css"/>
     <script
             src="https://kit.fontawesome.com/fb7068e0f1.js"
             crossorigin="anonymous"
@@ -52,9 +53,8 @@ $query = "SELECT * FROM my_harvests"; $result = pg_query($dbconn, $query);
             $harDateFinished = $row['harvest_date'];
 
 
-
             echo '<div class="flower_harvest">';
-            echo '<h3>' . $harvName. '</h3>';
+            echo '<h3>' . $harvName . '</h3>';
             echo '<p>Date Planted: ' . $harDatePlanted . '</p>';
             echo '<p>Date of Harvest: ' . $harDateFinished . '</p>';
             echo '</div>';
