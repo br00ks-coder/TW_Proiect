@@ -76,6 +76,26 @@ include('php/flowers_admin.php');
         // Display the generated <div> elements
         generateDivs($flowers);
         ?>
+
+        <h2>Add Flower</h2>
+        <form method="post" action="">
+            <label for="flowerName">Flower Name:</label>
+            <input type="text" id="flowerName" name="flowerName" required>
+
+            <label for="availableQuantity">Available Quantity:</label>
+            <input type="number" id="availableQuantity" name="availableQuantity" required>
+
+            <label for="priceAdd">Price:</label>
+            <input type="number" id="priceAdd" name="priceAdd" required>
+<br>
+            <label for="description">Description:</label>
+            <input type="text" id="decription" name="description" required>
+
+            <label for="difficulty">Difficulty:</label>
+            <input type="text" id="difficulty" name="difficulty" required>
+<br>
+            <input type="submit" name="add" value="Add Flower">
+        </form>
     </section>
 
 
