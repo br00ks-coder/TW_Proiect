@@ -1,0 +1,23 @@
+section > div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#user-container {
+    justify-content: left;
+
+    flex: 0 0 70%; /* Set a fixed width for the user-container, adjust as needed */
+}
+
+#export-json {
+    justify-content: right;
+
+    flex: 0 0 30%; /* Set a fixed width for the export-json, adjust as needed */
+}

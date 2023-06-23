@@ -21,14 +21,14 @@ while ($row = pg_fetch_assoc($result)) {
     $userId = $row['id'];
     $username = $row['username'];
 
-    $html .= '<form id="delete-user-form" method="post" action="delete_user.php">';
+    $html .= '<form id="delete-user-form" method="post" action="php/delete_user.php">';
         $html .= '<p>' . $username . '</p>';
 
     $html .= '<input type="hidden" name="user_id" value="' . $userId . '">';
     $html .= '<button type="submit" name="delete">Delete</button>';
     $html .= '</form>';
 
-    $html .= '<form id="change-password-form" method="post" action="change_password.php">';
+    $html .= '<form id="change-password-form" method="post" action="php/change_password.php">';
     $html .= '<input type="hidden" name="user_id1" value="' . $userId . '">';
     $html .= '<input type="password" name="new_password1" placeholder="New Password">';
     $html .= '<button type="submit" name="change_password">Change Password</button>';

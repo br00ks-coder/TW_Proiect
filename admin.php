@@ -16,7 +16,7 @@ if (!$dbconn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/GeneralStyle.css" />
     <link rel="stylesheet" href="css/style.css" />
-
+      <link rel="stylesheet" href="css/admin.css" />
     <script
       src="https://kit.fontawesome.com/fb7068e0f1.js"
       crossorigin="anonymous"
@@ -46,22 +46,37 @@ if (!$dbconn) {
   <nav class="nav_bar">
         <ul class="login_list">
             <!-- HTML code -->
-                <a href="php/logout.php">
-                    <li class="logout">Log out</li>
-                </a>
-           
+            <a href="php/logout.php">
+                <li class="logout">Log out</li>
+            </a>
+
+
         </ul>
     </nav>
 
-<main style="height: 50vh;">
-   
+<main style="min-height: 20vh;">
 
 
-  <div id="user-container">
-    <!-- User data will be loaded dynamically here -->
-</div>
+<section>
+        <div id="user-container">
+            <!-- User data will be loaded dynamically here -->
+        </div>
+    <form id="export-json" action="php/export.php" method="POST">
+        <button type="submit" name="export">Export Database</button>
+    </form>
 
-<script>
+
+</section>
+
+
+
+
+
+
+
+
+
+    <script>
 function fetchUserData() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "./php/fetch_users.php", true);
@@ -126,7 +141,7 @@ function handleDeleteUserFormSubmit(event) {
 
 function pollUserData() {
   fetchUserData();
-  setTimeout(pollUserData, 5000);
+  setTimeout(pollUserData, 50);
 }
 
 fetchUserData();
