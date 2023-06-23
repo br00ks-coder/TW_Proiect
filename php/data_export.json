@@ -1,0 +1,144 @@
+{
+    "users": [
+        {
+            "id": "39",
+            "username": "mihail",
+            "password": "mihail",
+            "is_admin": "f"
+        },
+        {
+            "id": "44",
+            "username": "admin",
+            "password": "admin",
+            "is_admin": "t"
+        },
+        {
+            "id": "46",
+            "username": "asdsadsa",
+            "password": "asdsaddsa",
+            "is_admin": "f"
+        },
+        {
+            "id": "47",
+            "username": "asdsasdasadsa",
+            "password": "asdasdsadsaddsa",
+            "is_admin": "f"
+        }
+    ],
+    "flowers": [
+        {
+            "id": "3",
+            "name": "Lily",
+            "description": "An elegant white flower",
+            "price": "12.99",
+            "difficulty": "EASY",
+            "created_at": "2023-06-18 23:43:43.65207",
+            "available_quantity": "8",
+            "flower_images": "resources\/lily"
+        },
+        {
+            "id": "4",
+            "name": "Sunflower",
+            "description": "A vibrant and cheerful flower",
+            "price": "7.99",
+            "difficulty": "MEDIUM",
+            "created_at": "2023-06-18 23:43:43.65207",
+            "available_quantity": "20",
+            "flower_images": "resources\/sunflower"
+        },
+        {
+            "id": "1",
+            "name": "Rose",
+            "description": "A beautiful red flower",
+            "price": "9.99",
+            "difficulty": "EASY",
+            "created_at": "2023-06-18 23:43:43.65207",
+            "available_quantity": "10",
+            "flower_images": "resources\/roseBuy"
+        },
+        {
+            "id": "2",
+            "name": "Tulip",
+            "description": "A colorful spring flower",
+            "price": "6.99",
+            "difficulty": "HARD",
+            "created_at": "2023-06-18 23:43:43.65207",
+            "available_quantity": "15",
+            "flower_images": "resources\/tulip"
+        }
+    ],
+    "message": [
+        {
+            "id": "1",
+            "name": "asdsa",
+            "email": "aaa@aaa",
+            "message": "asdasd ",
+            "created_at": "2023-06-18 23:07:03.129915"
+        },
+        {
+            "id": "2",
+            "name": "asdsad",
+            "email": "aaa@aaa",
+            "message": "sadsada asdsa",
+            "created_at": "2023-06-18 23:08:10.613892"
+        },
+        {
+            "id": "3",
+            "name": "acjkasdhkajshd",
+            "email": "ashd@yahoo.com",
+            "message": "test final",
+            "created_at": "2023-06-18 23:10:46.872992"
+        },
+        {
+            "id": "4",
+            "name": "asdsadsa",
+            "email": "asdfsadnj@yahoo.com",
+            "message": "mesat actual",
+            "created_at": "2023-06-19 00:39:01.520777"
+        }
+    ],
+    "harvests": [
+        {
+            "har_name": "Lilies",
+            "date_planted": "2023-06-01",
+            "harvest_date": "2023-08-01",
+            "har_id": "1"
+        },
+        {
+            "har_name": "Roses",
+            "date_planted": "2023-04-13",
+            "harvest_date": "2023-09-29",
+            "har_id": "2"
+        },
+        {
+            "har_name": "Sunflower",
+            "date_planted": "2023-04-01",
+            "harvest_date": "2023-10-01",
+            "har_id": "3"
+        },
+        {
+            "har_name": "Tulip",
+            "date_planted": "2022-06-08",
+            "harvest_date": "2024-06-04",
+            "har_id": "4"
+        }
+    ],
+    "humidity": [
+        {
+            "id": "1",
+            "humidity": "85"
+        },
+        {
+            "id": "2",
+            "humidity": "65"
+        },
+        {
+            "id": "3",
+            "humidity": "50"
+        },
+        {
+            "id": "4",
+            "humidity": "30"
+        }
+    ]
+}

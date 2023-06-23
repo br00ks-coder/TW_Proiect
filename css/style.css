@@ -130,7 +130,9 @@ background-color: #3e8e41;
 .flower-div {
 width: 100%;
 height: 100%;
-background-image: url('Images_for_main_page/rose.jpeg');
+background-image: url('resources/rose.jpeg');
 background-size: cover;
 background-position: center;
 }
+
+

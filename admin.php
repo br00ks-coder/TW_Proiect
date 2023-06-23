@@ -16,8 +16,12 @@ if (!$dbconn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/GeneralStyle.css" />
     <link rel="stylesheet" href="css/style.css" />
+<<<<<<< Updated upstream
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+=======
+      <link rel="stylesheet" href="css/admin.css" />
+>>>>>>> Stashed changes
     <script
       src="https://kit.fontawesome.com/fb7068e0f1.js"
       crossorigin="anonymous"
@@ -47,21 +51,33 @@ if (!$dbconn) {
   <nav class="nav_bar">
         <ul class="login_list">
             <!-- HTML code -->
+<<<<<<< Updated upstream
                 <a href="logout.php">
                     <li class="logout">Log out</li>
                 </a>
            
+=======
+            <a href="php/logout.php">
+                <li class="logout">Log out</li>
+            </a>
+
+
+>>>>>>> Stashed changes
         </ul>
     </nav>
 
-<main style="height: 50vh;">
-   
+<main style="min-height: 20vh;">
 
 
-  <div id="user-container">
-    <!-- User data will be loaded dynamically here -->
-</div>
+<section>
+        <div id="user-container">
+            <!-- User data will be loaded dynamically here -->
+        </div>
+    <form id="export-json" action="php/export.php" method="POST">
+        <button type="submit" name="export">Export Database</button>
+    </form>
 
+<<<<<<< Updated upstream
 <script>
 
 $(document).ready(function() {
@@ -79,6 +95,31 @@ $(document).ready(function() {
                 console.log("AJAX request error:", error);
             }
         });
+=======
+
+</section>
+
+
+
+
+
+
+
+
+
+    <script>
+function fetchUserData() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "./php/fetch_users.php", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = xhr.responseText;
+        document.getElementById("user-container").innerHTML = response;
+      } else {
+        console.log("AJAX request error:", xhr.status);
+      }
+>>>>>>> Stashed changes
     }
 
     // Function to handle password change form submission
@@ -127,8 +168,15 @@ $(document).ready(function() {
         });
     }
 
+<<<<<<< Updated upstream
     // Call fetchUserData initially
     fetchUserData();
+=======
+function pollUserData() {
+  fetchUserData();
+  setTimeout(pollUserData, 50);
+}
+>>>>>>> Stashed changes
 
     // Polling function to fetch user data at regular intervals
     function pollUserData() {
