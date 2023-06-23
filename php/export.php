@@ -7,7 +7,7 @@ if (isset($_POST['export'])) {
     $usersResult = pg_query($dbconn, $usersQuery);
 
     // Retrieve the data from the flowers table
-    $flowersQuery = "SELECT id, name, description,price,difficulty,created_at,available_quantity,flower_images FROM flowers";
+    $flowersQuery = "SELECT id, name, description,price,difficulty,created_at,available_quantity FROM flowers";
     $flowersResult = pg_query($dbconn, $flowersQuery);
 
     $messageQuerry = "SELECT id, name, email,message,created_at FROM contact_messages";
