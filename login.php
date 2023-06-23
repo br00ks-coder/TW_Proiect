@@ -53,7 +53,7 @@ if (isset($_SESSION['username'])) {
    
 
 
-    <form method="POST" action="loginFunc.php">
+    <form method="POST" action="php/loginFunc.php">
 
         <h2>Member login</h2>
         <div class="form-group">

@@ -46,7 +46,7 @@ session_start();
 
 <div class="contact-div">
   <h2>Contact Us</h2>
-  <form style="position: relative; left: 1px;" method="post" action="process_contact.php">
+  <form style="position: relative; left: 1px;" method="post" action="php/process_contact.php">
   <label for="name">Name:</label>
   <input type="text" id="name" name="name">
   <label for="email">Email:</label>

@@ -98,7 +98,7 @@ include_once './view/Header.php';
 ?>
 
     <main>
-        <form method="POST" action="registerFunc.php">
+        <form method="POST" action="php/registerFunc.php">
             <h2>Forum Registration</h2>
             <div class="form-group">
                 <label for="username">Username:</label>

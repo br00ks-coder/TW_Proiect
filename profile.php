@@ -51,7 +51,7 @@ include_once './view/Header.php';
   <main class="mainProfile">
      
 
-<form id="profileForm" action="profileFunc.php" method="POST">
+<form id="profileForm" action="php/profileFunc.php" method="POST">
   <label for="username">Username: <span id="username"><?php echo $_SESSION['username']; ?></span></label>
   <br>
   <label for="oldPwd">Current password:</label><br>
