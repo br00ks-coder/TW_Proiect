@@ -5,7 +5,7 @@ if (!$dbconn) {
     // Handle connection error
     die("Connection failed: " . pg_last_error());
 }
-
+include('php/flowers_admin.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +14,8 @@ if (!$dbconn) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/GeneralStyle.css" />
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/GeneralStyle.css" />
+      <!-- <link rel="stylesheet" href="css/style.css" />-->
       <link rel="stylesheet" href="css/admin.css" />
     <script
       src="https://kit.fontawesome.com/fb7068e0f1.js"
@@ -57,16 +57,26 @@ if (!$dbconn) {
 <main style="min-height: 20vh;">
 
 
-<section>
+    <section>
+        <h2>USERS:</h2>
         <div id="user-container">
             <!-- User data will be loaded dynamically here -->
         </div>
-    <form id="export-json" action="php/export.php" method="POST">
-        <button type="submit" name="export">Export Database</button>
-    </form>
+        <h2>EXPORT DB:</h2>
 
+        <form id="export-json" action="php/export.php" method="POST">
+            <button type="submit" name="export">Export Database</button>
+        </form>
+    </section>
 
-</section>
+    <section>
+        <h2>FLOWER ADMINISTRATION:</h2>
+
+        <?php
+        // Display the generated <div> elements
+        generateDivs($flowers);
+        ?>
+    </section>
 
 
 
@@ -141,7 +151,7 @@ function handleDeleteUserFormSubmit(event) {
 
 function pollUserData() {
   fetchUserData();
-  setTimeout(pollUserData, 50);
+  setTimeout(pollUserData, 5000);
 }
 
 fetchUserData();

@@ -1,23 +1,49 @@
-section > div {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-
-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 #user-container {
     justify-content: left;
 
-    flex: 0 0 70%; /* Set a fixed width for the user-container, adjust as needed */
+ /* Set a fixed width for the user-container, adjust as needed */
 }
 
 #export-json {
     justify-content: right;
 
     flex: 0 0 30%; /* Set a fixed width for the export-json, adjust as needed */
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+form {
+    left: 50%;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+main{
+    height: 150vh;
+
+    margin-top: 11rem;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    padding-top: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 3%;
+    padding-bottom: 2%;
+    background-color:hsl(80,0%, 77%);
+    color: hsl(220, 17%, 27%);
+    box-shadow: 1px 1px 10px 4px rgb(0, 0, 0);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
 }
