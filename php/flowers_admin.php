@@ -20,7 +20,6 @@ function generateDivs($flowers) {
 
         echo "<div>";
 
-
         // Admin controls (delete and quantity update)
         echo "<form method='post' action=''>";
         echo "<p>Flower Name: $flowerName</p>";
@@ -34,6 +33,7 @@ function generateDivs($flowers) {
         echo "</div>";
     }
 }
+
 // Function to delete a flower by ID
 function deleteFlower($flowerId) {
     global $dbconn;
@@ -63,4 +63,19 @@ if (isset($_POST['update'])) {
     $newQuantity = $_POST['newQuantity'];
     updateQuantity($flowerId, $newQuantity);
 }
+
+// Handle add flower action
+if (isset($_POST['add'])) {
+    $flowerName = $_POST['flowerName'];
+    $availableQuantity = $_POST['availableQuantity'];
+    $price = $_POST['priceAdd'];
+    $difficulty = $_POST['difficulty'];
+    $description = $_POST['description'];
+
+
+    // Insert the new flower into the database
+    $query = "INSERT INTO flowers (name, available_quantity,price,description,difficulty) VALUES ('$flowerName', $availableQuantity,$price,'$description','$difficulty')";
+    pg_query($dbconn, $query);
+}
 ?>
+
