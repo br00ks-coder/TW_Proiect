@@ -55,7 +55,7 @@ include_once './view/Header.php';
 ?>
 
   <main class="mainProfile">
-     
+
 
 <form id="profileForm" action="php/profileFunc.php" method="POST">
     <label for="username">Username: <span id="username"><?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?></span></label>
@@ -67,10 +67,58 @@ include_once './view/Header.php';
   <input type="password" id="newPwd" name="newPwd" placeholder="new password"><br><br>
   <label for="newPwdCon">Confirm new password:</label><br>
   <input type="password" id="newPwdCon" name="newPwdCon" placeholder="confirm password"><br><br>
-  <button type="submit">Change password</button>
+    <button id="changePwdBtn">Change Password</button>
 
-</form> 
+</form>
 
+
+      <script>
+          document.getElementById("changePwdBtn").addEventListener("click", function() {
+              var username = "<?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?>";
+              var oldPwd = document.getElementById("oldPwd").value;
+              var newPwd = document.getElementById("newPwd").value;
+              var newPwdCon = document.getElementById("newPwdCon").value;
+
+              // Create an XMLHttpRequest object
+              var xhr = new XMLHttpRequest();
+
+              // Set up the request
+              xhr.open("POST", "php/profileFunc.php", true);
+
+              // Set the response type
+              xhr.responseType = "json";
+
+              // Set up the event handler for the AJAX response
+              xhr.onload = function() {
+                  if (xhr.status === 200) {
+                      // Successful response
+                      var response = xhr.response;
+                      // Handle the response as needed
+                      console.log(response);
+                  } else {
+                      // Error handling
+                      console.error("Request failed. Status: " + xhr.status);
+                  }
+              };
+
+              // Create the request payload
+              var payload = {
+                  username: username,
+                  oldPwd: oldPwd,
+                  newPwd: newPwd,
+                  newPwdCon: newPwdCon
+              };
+
+              // Convert the payload to JSON
+              var payloadJson = JSON.stringify(payload);
+
+              // Set the appropriate request headers
+              xhr.setRequestHeader("Content-Type", "application/json");
+
+              // Send the request with the payload
+              xhr.send(payloadJson);
+          });
+      </script>
 
     
   </main>

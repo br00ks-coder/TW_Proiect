@@ -51,6 +51,9 @@
             <a href="../buy.php">
                 <li class="buy_flowers">Buy Flowers</li>
             </a>
+            <a href="../humidify.php">
+                <li class="humidify">Humidify</li>
+            </a>
             <a href="../contact.php">
                 <li class="contact_button">Contact Us</li>
             </a>
