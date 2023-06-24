@@ -1,12 +1,19 @@
 <?php
 session_start();
 
-// Check if the session is active
-if (isset($_SESSION['username'])) {
-  // Redirect to the desired page
-  header("Location: index.php");
-  exit; // Make sure to exit after the redirection
+// Check if the session is active and the user is authenticated
+
+
+$jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
+$secretKey = 'your-secret-key'; // Replace with your own secret key
+require 'php/jwtVerify.php';
+
+$validationResult = verifyJwtToken($jwtToken, $secretKey);
+if($validationResult)
+{
+    header("Location: profile.php");
 }
+
 ?>
 
 <!DOCTYPE html>

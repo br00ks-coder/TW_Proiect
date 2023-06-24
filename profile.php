@@ -2,13 +2,19 @@
 session_start();
 
 // Check if the session is active and the user is authenticated
-if (!isset($_SESSION['username'])) {
-    // Redirect to the login page or display an error message
+
+
+$jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
+$secretKey = 'your-secret-key'; // Replace with your own secret key
+require 'php/jwtVerify.php';
+
+$validationResult = verifyJwtToken($jwtToken, $secretKey);
+if(!$validationResult)
+{
     header("Location: login.php");
-    exit();
 }
 
-// Close the database connection
+
 
 ?>
 
@@ -52,8 +58,9 @@ include_once './view/Header.php';
      
 
 <form id="profileForm" action="php/profileFunc.php" method="POST">
-  <label for="username">Username: <span id="username"><?php echo $_SESSION['username']; ?></span></label>
+    <label for="username">Username: <span id="username"><?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?></span></label>
   <br>
+    <input type="hidden" name="username" value="<?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?>">
   <label for="oldPwd">Current password:</label><br>
   <input type="password" id="oldPwd" name="oldPwd" placeholder="current password"><br><br>
   <label for="newPwd">New Password:</label><br>
