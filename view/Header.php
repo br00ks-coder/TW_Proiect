@@ -17,7 +17,7 @@
         <ul class="login_list">
             <!-- HTML code -->
 
-            <?php if (isset($_SESSION['username'])): ?>
+            <?php if ($validationResult): ?>
                 <!-- Display content for logged-in users -->
                 <a href="../profile.php">
                     <li class="profile">Profile</li>

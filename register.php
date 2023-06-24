@@ -1,6 +1,21 @@
 <?php
 session_start();
 
+// Check if the session is active and the user is authenticated
+
+
+$jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
+$secretKey = 'your-secret-key'; // Replace with your own secret key
+require 'php/jwtVerify.php';
+
+$validationResult = verifyJwtToken($jwtToken, $secretKey);
+
+if($validationResult)
+{
+    header("Location: profile.php");
+}
+// C
+
 // Database connection details
 $host = "webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com";
 $dbname = "webgardening";

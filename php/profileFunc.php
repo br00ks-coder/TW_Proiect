@@ -1,5 +1,6 @@
 <?php   
 session_start();
+
 $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
 if (!$dbconn) {
     // Handle connection error
@@ -10,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $oldpass = $_POST['oldPwd']; 
     $newpass = $_POST['newPwd'];
     $newpassconf = $_POST['newPwdCon'];
-    $username = $_SESSION['username'];
+    $username = $_POST['username'];
     
     // Retrieve the current password from the database
     $query = "SELECT password FROM users WHERE username = $1";

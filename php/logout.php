@@ -1,10 +1,6 @@
 <?php
-session_start(); // Start the session
-
-if (isset($_SESSION['username'])) {
-    // Session exists, destroy it
-    session_destroy();
-}
+// Clear JWT token cookie
+setcookie('jwt_token', '', time() - 3600, '/');
 
 // Redirect to another page
 header("Location: ../index.php");
