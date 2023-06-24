@@ -9,8 +9,7 @@ $secretKey = 'your-secret-key'; // Replace with your own secret key
 require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-if(!$validationResult)
-{
+if (!$validationResult) {
     header("Location: login.php");
 }
 // C
@@ -24,25 +23,25 @@ include('php/flowers_admin.php');
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/GeneralStyle.css" />
-      <!-- <link rel="stylesheet" href="css/style.css" />-->
-      <link rel="stylesheet" href="css/admin.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/GeneralStyle.css"/>
+    <!-- <link rel="stylesheet" href="css/style.css" />-->
+    <link rel="stylesheet" href="css/admin.css"/>
     <script
-      src="https://kit.fontawesome.com/fb7068e0f1.js"
-      crossorigin="anonymous"
+            src="https://kit.fontawesome.com/fb7068e0f1.js"
+            crossorigin="anonymous"
     ></script>
     <!--used for icons-->
     <title>Web Gardening</title>
-  </head>
+</head>
 
-  <body>
-  <!-- Image for background -->
-  <div id="background"
-       style="
+<body>
+<!-- Image for background -->
+<div id="background"
+     style="
     top: 0;
     left: 0;
     bottom: 0;
@@ -53,20 +52,20 @@ include('php/flowers_admin.php');
     filter: blur(4px);
     z-index: -1;
     ">
-      >
-  </div>
-  <!-- Declared here to load as fast as possible -->
+    >
+</div>
+<!-- Declared here to load as fast as possible -->
 
-  <nav class="nav_bar">
-        <ul class="login_list">
-            <!-- HTML code -->
-            <a href="php/logout.php">
-                <li class="logout">Log out</li>
-            </a>
+<nav class="nav_bar">
+    <ul class="login_list">
+        <!-- HTML code -->
+        <a href="php/logout.php">
+            <li class="logout">Log out</li>
+        </a>
 
 
-        </ul>
-    </nav>
+    </ul>
+</nav>
 
 <main style="display: flex;">
 
@@ -86,139 +85,49 @@ include('php/flowers_admin.php');
         // Display the generated <div> elements
         generateDivs($flowers);
         ?>
+
+
     </section>
 
 
-<section>
-    <h2>Add Flower</h2>
-    <form method="post" action="">
-        <label for="flowerName">Flower Name:</label>
-        <input type="text" id="flowerName" name="flowerName" required>
+    <section>
+        <h2>Add Flower</h2>
+        <form method="post" action="">
+            <label for="flowerName">Flower Name:</label>
+            <input type="text" id="flowerName" name="flowerName" required>
 
-        <label for="availableQuantity">Available Quantity:</label>
-        <input type="number" id="availableQuantity" name="availableQuantity" required>
+            <label for="availableQuantity">Available Quantity:</label>
+            <input type="number" id="availableQuantity" name="availableQuantity" required>
 
-        <label for="priceAdd">Price:</label>
-        <input type="number" id="priceAdd" name="priceAdd" required>
+            <label for="priceAdd">Price:</label>
+            <input type="number" id="priceAdd" name="priceAdd" required>
+            <br>
+            <label for="description">Description:</label>
+            <input type="text" id="decription" name="description" required>
+
+            <label for="difficulty">Difficulty:</label>
+            <input type="text" id="difficulty" name="difficulty" required>
+            <br>
+            <input type="submit" name="add" value="Add Flower">
+        </form>
+
         <br>
-        <label for="description">Description:</label>
-        <input type="text" id="decription" name="description" required>
+        <h2>EXPORT DB:</h2>
 
-        <label for="difficulty">Difficulty:</label>
-        <input type="text" id="difficulty" name="difficulty" required>
-        <br>
-        <input type="submit" name="add" value="Add Flower">
-    </form>
+        <form id="export-json" action="php/export.php" method="POST">
+            <button type="submit" name="export">Export Database</button>
+        </form>
+    </section>
 
-<br>
-    <h2>EXPORT DB:</h2>
-
-    <form id="export-json" action="php/export.php" method="POST">
-        <button type="submit" name="export">Export Database</button>
-    </form>
-</section>
-
-
-
-
-
-
-
-
-
-
-    <script>
-function fetchUserData() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "./php/fetch_users.php", true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        var response = xhr.responseText;
-        document.getElementById("user-container").innerHTML = response;
-      } else {
-        console.log("AJAX request error:", xhr.status);
-      }
-    }
-  };
-  xhr.send();
-}
-
-function handlePasswordChangeFormSubmit(event) {
-  event.preventDefault();
-
-  var form = event.target;
-  var url = form.getAttribute("action");
-  var formData = new FormData(form);
-
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        var response = xhr.responseText;
-        console.log(response);
-        fetchUserData();
-      } else {
-        console.log("AJAX request error:", xhr.status);
-      }
-    }
-  };
-  xhr.send(formData);
-}
-
-function handleDeleteUserFormSubmit(event) {
-  event.preventDefault();
-
-  var form = event.target;
-  var url = form.getAttribute("action");
-  var formData = new FormData(form);
-
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        var response = xhr.responseText;
-        console.log(response);
-        fetchUserData();
-      } else {
-        console.log("AJAX request error:", xhr.status);
-      }
-    }
-  };
-  xhr.send(formData);
-}
-
-function pollUserData() {
-  fetchUserData();
-  setTimeout(pollUserData, 5000);
-}
-
-fetchUserData();
-pollUserData();
-
-document.addEventListener("submit", function(event) {
-  var target = event.target;
-  if (target.getAttribute("id") === "change-password-form") {
-    event.preventDefault();
-    handlePasswordChangeFormSubmit(event);
-  } else if (target.getAttribute("id") === "delete-user-form") {
-    event.preventDefault();
-    handleDeleteUserFormSubmit(event);
-  }
-});
-
-</script>
-
+    <script src="js/admin.js"></script>
 
 
 </main>
 
-  <?php
-  include_once './view/Footer.php';
-  ?>
+<?php
+include_once './view/Footer.php';
+?>
 
-  </body>
+</body>
 
 </html>
