@@ -136,3 +136,68 @@ background-position: center;
 }
 
 
+.show-cart li {
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+#cart-window {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+#cart-window h2 {
+  margin-top: 0;
+}
+
+#cart-window ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#cart-window li {
+  margin-bottom: 10px;
+}
+
+#cart-window p {
+  text-align: right;
+  margin-top: 20px;
+}
+#cart_button {
+  list-style-type: none;
+  background: linear-gradient(hsl(246, 30%, 75%), hsl(246, 30%, 90%));
+  border-radius: 25px;
+  padding: 10px;
+  transition: transform 0.5s; /* Used to come back to original in slow motion */
+}
+
+#cart_button {
+  /* Cursor hover effect of moving on z axis */
+  box-shadow: 4px 6px hsl(246, 30%, 79%); /* Because of this shadow*/
+  transform: translate(-10%, -10%); /* Changing the position */
+  transition: transform 0.6s; /* Adding some lag to effect to be nicer*/
+}
+
+#cart_button{
+  /* Effect on click */
+  background-color: hsl(246, 30%, 70%); /* Changing color of background */
+  transform: scale(0.9); /* Scaling down so it looks like it was pressed */
+  transition: transform 0.5s; /* In css, a little bit of lag is beautiful */
+}

@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="../css/header.css">
+
     <title>Header view</title>
 </head>
 <header class="header">
@@ -16,6 +17,13 @@
     <nav class="nav_bar">
         <ul class="login_list">
             <!-- HTML code -->
+            <li id="cart-window">
+                <h2>Cart</h2>
+                <ul id="cart-items">
+                </ul>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+            </li>
+            <button id="cart_button" onclick="toggleCartWindow()">Open Cart</button>
 
             <?php if ($validationResult): ?>
                 <!-- Display content for logged-in users -->
@@ -42,6 +50,7 @@
     <div class="horizontal_rule"></div>
     <nav class="nav_list">
         <ul>
+
             <a href="../about.php">
                 <li class="about_us">About Us</li>
             </a>
@@ -88,6 +97,7 @@
         </ul>
     </nav>
 </header>
+<script src="js/cart.js"></script>
 
 <script>
     const openMobileMenu = document.querySelector('#open_menu');

@@ -99,3 +99,36 @@ section > .image > img {
     }
 }
 
+#cart-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+#cart-window h2 {
+    margin-top: 0;
+}
+
+#cart-window ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#cart-window li {
+    margin-bottom: 10px;
+}
+
+#cart-window p {
+    text-align: right;
+    margin-top: 20px;
+}

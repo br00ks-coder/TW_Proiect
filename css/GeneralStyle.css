@@ -46,7 +46,27 @@ li:active {
   transform: scale(0.9); /* Scaling down so it looks like it was pressed */
   transition: transform 0.5s; /* In css, a little bit of lag is beautiful */
 }
+#cart_button {
+  list-style-type: none;
+  background: linear-gradient(hsl(246, 30%, 75%), hsl(246, 30%, 90%));
+  border-radius: 25px;
+  padding: 10px;
+  transition: transform 0.5s; /* Used to come back to original in slow motion */
+}
 
+#cart_button {
+  /* Cursor hover effect of moving on z axis */
+  box-shadow: 4px 6px hsl(246, 30%, 79%); /* Because of this shadow*/
+  transform: translate(-10%, -10%); /* Changing the position */
+  transition: transform 0.6s; /* Adding some lag to effect to be nicer*/
+}
+
+#cart_button{
+  /* Effect on click */
+  background-color: hsl(246, 30%, 70%); /* Changing color of background */
+  transform: scale(0.9); /* Scaling down so it looks like it was pressed */
+  transition: transform 0.5s; /* In css, a little bit of lag is beautiful */
+}
 #open_menu, #nav_for_media{
   display: none;
 }

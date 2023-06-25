@@ -16,7 +16,8 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <link rel="stylesheet" href="css/GeneralStyle.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/buy.css" />
-    <script
+
+      <script
       src="https://kit.fontawesome.com/fb7068e0f1.js"
       crossorigin="anonymous"
     ></script>
@@ -45,6 +46,14 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
   <?php include_once "./view/Header.php"; ?>
 
 <main style="height: fit-content">
+
+
+
+
+    <!-- Button to toggle cart window -->
+
+
+
     <h2>Featured Flowers</h2>
     <section class="flowers">
         <?php include_once "php/buy_func.php" ?>
