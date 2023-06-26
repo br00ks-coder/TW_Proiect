@@ -36,7 +36,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     bottom: 0;
     right: 0;
     position: fixed;
-    background: linear-gradient(-45deg,#1b4d3e,#018749,#1cac78);
+    background: linear-gradient(-45deg,#6EA751,#018749,#1cac78);
     background-size: cover;
 
     z-index: -1;

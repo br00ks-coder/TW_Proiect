@@ -17,13 +17,7 @@
     <nav class="nav_bar">
         <ul class="login_list">
             <!-- HTML code -->
-            <li id="cart-window">
-                <h2>Cart</h2>
-                <ul id="cart-items">
-                </ul>
-                <p>Total: $<span id="cart-total">0.00</span></p>
-            </li>
-            <button id="cart_button" onclick="toggleCartWindow()">Open Cart</button>
+
 
             <?php if ($validationResult): ?>
                 <!-- Display content for logged-in users -->
@@ -33,6 +27,13 @@
                 <a href="../php/logout.php">
                     <li class="logout">Log out</li>
                 </a>
+            <li id="cart-window">
+                <h2>Cart</h2>
+                <ul id="cart-items">
+                </ul>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+            </li>
+            <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
 
                 </ul>
             <?php else: ?>
