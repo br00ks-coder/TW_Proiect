@@ -21,29 +21,32 @@
 
             <?php if ($validationResult): ?>
                 <!-- Display content for logged-in users -->
-                <a href="../profile.php">
-                    <li class="profile">Profile</li>
-                </a>
-                <a href="../php/logout.php">
-                    <li class="logout">Log out</li>
-                </a>
             <li id="cart-window">
                 <h2>Cart</h2>
                 <ul id="cart-items">
                 </ul>
                 <p>Total: $<span id="cart-total">0.00</span></p>
             </li>
-            <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart" ></i></button>
+                <a href="../profile.php">
+                    <li class="profile">Profile</li>
+                </a>
+                <a href="../php/logout.php">
+                    <li class="logout">Log out</li>
+                </a>
+
 
                 </ul>
             <?php else: ?>
                 <!-- Display content for non-logged-in users -->
+
                 <a href="../login.php">
                     <li class="log_in">Log In</li>
                 </a>
                 <a href="../register.php">
                     <li class="register">Register</li>
                 </a>
+
 
             <?php endif; ?>
         </ul>
