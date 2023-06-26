@@ -3,15 +3,11 @@ session_start();
 
 // Check if the session is active and the user is authenticated
 
-
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
 require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-
-// C
-
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +18,8 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/GeneralStyle.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/buy.css" />
-    <script
-        src="https://kit.fontawesome.com/fb7068e0f1.js"
-        crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="css/help.css" />
+    <script src="https://kit.fontawesome.com/fb7068e0f1.js" crossorigin="anonymous"></script>
     <!--used for icons-->
     <title>Web Gardening</title>
 </head>
@@ -34,24 +27,24 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 <body>
 <!-- Image for background -->
 <div id="background"
-     style="
+    style ="
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: fixed;
-    background-image: url('resources/background_lavender.jpeg');
+    background-image: url('resources/help.jpg');
     background-size: cover;
     filter: blur(4px);
     z-index: -1;
     ">
-    >
 </div>
 <!-- Declared here to load as fast as possible -->
 
 <?php include_once "./view/Header.php"; ?>
 
 <main style="height: fit-content">
+
     <section class="help-section">
         <h2 class="help-heading">Categories</h2>
         <ul class="help-categories">
@@ -83,15 +76,15 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         <h2 class="help-heading">Instructions</h2>
         <ul class="help-instructions">
             <li class="help-instruction">
-                <h3 class="help-instruction-title">1. Creating an Account</h3>
+                <h3 class="help-instruction-title"> Creating an Account</h3>
                 <p class="help-instruction-description">
                     To access all features of our home gardening site, create
-                    an account by clicking on the "Sign Up" button and filling
+                    an account by clicking on the "Register" button and filling
                     out the required information.
                 </p>
             </li>
             <li class="help-instruction">
-                <h3 class="help-instruction-title">2. Browsing Plants</h3>
+                <h3 class="help-instruction-title"> Browsing Plants</h3>
                 <p class="help-instruction-description">
                     Use the navigation menu or search bar to browse and explore
                     various plants available on our site. Click on a plant to
@@ -99,7 +92,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
                 </p>
             </li>
             <li class="help-instruction">
-                <h3 class="help-instruction-title">3. Placing an Order</h3>
+                <h3 class="help-instruction-title"> Placing an Order</h3>
                 <p class="help-instruction-description">
                     Once you've found the desired plant, add it to your cart
                     and proceed to checkout. Provide the necessary details and
@@ -111,13 +104,10 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
 
 
-
 </main>
 
-<?php
-include_once './view/Footer.php';
-?>
+<?php include_once './view/Footer.php'; ?>
+
 
 </body>
-
 </html>

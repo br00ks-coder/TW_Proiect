@@ -54,7 +54,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         }
     }
     ">
-    >
+
 </div>
 <!-- Declared here to load as fast as possible -->
 

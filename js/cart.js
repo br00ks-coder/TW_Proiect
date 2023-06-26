@@ -34,7 +34,7 @@ function updateCartDisplay() {
 
     // Populate the cart display with items
     cartItems.forEach(function(item) {
-        var li = document.createElement("li");
+        var li= document.createElement("li");
         var price = parseFloat(item.price); // Convert price to a number
 
         // Create quantity container
@@ -43,6 +43,7 @@ function updateCartDisplay() {
         // Create decrease button
         var decreaseBtn = document.createElement("button");
         decreaseBtn.textContent = "-";
+        decreaseBtn.classList.add("quantity-btn");
         decreaseBtn.addEventListener("click", function() {
             decreaseQuantity(item);
             updateCartDisplay();
@@ -57,6 +58,7 @@ function updateCartDisplay() {
         // Create increase button
         var increaseBtn = document.createElement("button");
         increaseBtn.textContent = "+";
+        increaseBtn.classList.add("quantity-btn");
         increaseBtn.addEventListener("click", function() {
             increaseQuantity(item);
             updateCartDisplay();

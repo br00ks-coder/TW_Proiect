@@ -2,18 +2,15 @@
 main{
   height: 150vh;
 
-  margin-top: 11rem;
-  margin-left: 5%;
-  margin-right: 5%;
+
 
   padding-top: 5%;
   padding-left: 3%;
   padding-right: 3%;
   border-radius: 3%;
   padding-bottom: 2%;
-  background-color:hsl(80,0%, 77%);
   color: hsl(220, 17%, 27%);
-  box-shadow: 1px 1px 10px 4px rgb(0, 0, 0);
+
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,26 +147,37 @@ background-position: center;
 #cart-window {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  background-color: #f9f9f9;
+  top: 50px; /* Adjust the top position to accommodate the dropdown */
+  right: 10px; /* Adjust the right position to align it properly */
+  width: auto; /* Remove fixed width */
+  max-height: 300px; /* Set a maximum height to limit the dropdown's size */
+  overflow-y: auto; /* Add vertical scrolling if necessary */
+  background-color: #1b4d3e;
   padding: 20px;
-  border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 9999;
+  transform: none; /* Changing the position */
+  transition: none;
 }
-
 #cart-window h2 {
   margin-top: 0;
+  color: #ffffff;
+  text-align: center;
 }
 
 #cart-window ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+#cart-items > li:hover {
+
+  color: #ffffff;
+  transform: none; /* Changing the position */
+  transition: none;
+
+
 }
 
 #cart-window li {
@@ -179,4 +187,18 @@ background-position: center;
 #cart-window p {
   text-align: right;
   margin-top: 20px;
+  color: #ffffff;
 }
+
+#cart-window  p:hover{
+  color: #ffffff;
+}
+.quantity-btn {
+
+  padding: 5px;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+
