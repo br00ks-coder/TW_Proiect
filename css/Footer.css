@@ -3,21 +3,37 @@
     position: absolute;
     left:0;
     right:0;
-    background: linear-gradient(
-            hsl(20, 0%, 92%),
-            hsl(246, 30%, 63%)
-    ); /* Nice linear background effect*/
-    clear: both; /*Put it under everything */
-
+    background: #023201;
+    clear: both;
     border-top-left-radius: 20px; /*Nice round corners*/
     border-top-right-radius: 20px;
-
-    padding-top: 2%; /* Padding for content */
+    color: #ffffff;
+    padding-top: 0.5%; /* Padding for content */
+    height: 10rem;
     display: flex;
     justify-content: space-evenly;
+    font-size: 1rem;
 }
 
 .location > iframe {
-    width: 100%;
-    height: 50%;
+    width: 70%;
+    height: 30%;
+
+}
+
+@media only screen and (max-width: 576px)
+{
+
+        #footer {
+
+            font-size: 0.7rem;
+            display: block;
+            text-align: center;
+            height: fit-content;
+            
+        }
+    .location > iframe{
+
+       display: none;
+    }
 }

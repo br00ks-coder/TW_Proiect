@@ -36,10 +36,23 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     bottom: 0;
     right: 0;
     position: fixed;
-    background-image: url('resources/background_lavender.jpeg');
+    background: linear-gradient(-45deg,#1b4d3e,#018749,#1cac78);
     background-size: cover;
-    filter: blur(4px);
+
     z-index: -1;
+    @keyframes  {
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+        }
+        100%{
+
+            background-position: 0% 50%;
+
+        }
+    }
     ">
     >
 </div>
@@ -48,7 +61,8 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 <?php include_once "./view/Header.php"; ?>
 
 <main id="main">
-    <section>
+
+    <section class="section1">
         <div class="section1 text" id="About_us"> <span>
             <h2>Welcome!</h2>
             <p>
@@ -57,15 +71,15 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
             </p>
           </span></div>
-        <div class="section1 image" id="Photo_1"><img src="resources/Photo_1.jpg" alt="Flower greenhouse"/></div>
+        <div class="section1 image" id="Photo_1"><img src="resources/flori.jpg" alt="Flower greenhouse"/></div>
     </section>
     <br/>
-    <section>
-        <div class="section2 image" id="Photo_2"><img src="resources/flower_shop.jpeg" alt="FlowerShop"/></div>
+    <section class="section2">
+        <div class="section2 image" id="Photo_2"><img src="resources/ghiveci.jpg" alt="FlowerShop"/></div>
         <div class="section2 text" id="Our_flowers"> <span>
-            <h2>Your flowers</h2>
+            <h2>Your flowers...</h2>
             <p>
-                Will thank you!
+                will thank you!
                  It was never easier to be able to sell your the flowers you grow.
                  With the help of our website and some sensors you will be able to monitor the status of your flowers.
                  You can do it anytime, anywhere.

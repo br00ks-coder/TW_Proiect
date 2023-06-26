@@ -2,7 +2,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(hsl(246, 30%, 63%), hsl(20, 0%, 86%));
+    background-color: #023201;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     position: fixed; /* To stay on top of the page while scrolling */
@@ -22,7 +22,10 @@
 .title {
     text-align: center; /* I don't think I need to repeat myself anymore*/
     grid-column: 2 / span 2; /* Title starting at the column 2 of the first row and spanning over 2 columns */
-    font-size: 2rem;
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: normal;
+
 }
 
 .nav_bar > ul {
@@ -33,7 +36,7 @@
 
 .horizontal_rule {
     /* Just a horizontal rule*/
-    background-color: hsl(220, 17%, 27%);
+    background-color: #696f73;
     grid-row: 2; /* Declared a row in grid only to add a horizontal rule */
     grid-column: 1 / span 4; /* Spanned it over all columns */
     height: 7px;
@@ -82,6 +85,7 @@
 
     .title{
         font-size: 1.5rem;
+
     }
 
     #open_menu{
@@ -99,8 +103,8 @@
         align-content: flex-end;
         text-align: right;
         padding-right: 3%;
-        background:linear-gradient(hsl(246, 30%, 63%), hsl(20, 0%, 86%));
+        background:#023201;
+
     }
+    li:active
 }
-
-

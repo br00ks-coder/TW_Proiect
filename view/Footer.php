@@ -5,10 +5,17 @@
 
 <footer id="footer">
     <!--footer used to display the contact information-->
-    <div class="contact ways">
-        <h3>Contact options:</h3>
-        <p><i class="fa-solid fa-phone"></i> 073 add number</p>
+    <div class="contact number">
+        <h3>Phone Number:</h3>
+        <p><i class="fa-solid fa-phone"></i> 073333333</p>
+
+    </div>
+    <div class="contact facebook">
+        <h3>Facebook Link:</h3>
         <p><i class="fa-brands fa-facebook"></i> WebGarden.facebook.com</p>
+    </div>
+    <div class="contact email">
+    <h3>Email Address:</h3>
         <p><i class="fa-solid fa-envelope"></i> jdoewg@email.com</p>
     </div>
     <div class="contact location">
