@@ -68,7 +68,6 @@ include_once './view/Header.php';
         </p>
     </div>
     <div class="flower-div" style="z-index: 2;">
-
     </div>
 
 

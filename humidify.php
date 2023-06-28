@@ -56,11 +56,11 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         <?php include_once "php/humFunc.php"            ?>
     </section>
 
-    <div id="humDiv">
+
             <form id="humForm" method="POST">
-                <button type="submit" name="water_flowers">Water Flowers</button>
+                <button id="water-button" type="submit" name="water_flowers">Water Flowers</button>
             </form>
-    </div>
+
 
 
 </main>

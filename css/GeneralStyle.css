@@ -47,27 +47,26 @@ li:active {
   background-color: transparent; /* So there is no white color over the button on click */
 }
 #cart_button {
-  list-style-type: none;
-  background: linear-gradient(hsl(246, 30%, 75%), hsl(246, 30%, 90%));
-  border-radius: 25px;
-  padding: 10px;
+  padding: 5px;
   transition: transform 0.5s; /* Used to come back to original in slow motion */
+  color: #ffffff;
+  background: transparent;
+  border: none;
 }
-
-#cart_button {
-  /* Cursor hover effect of moving on z axis */
-  box-shadow: 4px 6px hsl(246, 30%, 79%); /* Because of this shadow*/
+#cart_button:hover {
+  color: #fe8a01;
   transform: translate(-10%, -10%); /* Changing the position */
-  transition: transform 0.6s; /* Adding some lag to effect to be nicer*/
+  transition: transform 0.6s;
 }
-
-#cart_button{
-  /* Effect on click */
-  background-color: hsl(246, 30%, 70%); /* Changing color of background */
+#cart_button:active {
+  color: #fe8a01;
   transform: scale(0.9); /* Scaling down so it looks like it was pressed */
   transition: transform 0.5s; /* In css, a little bit of lag is beautiful */
+  background-color: transparent;
 }
+
 #open_menu, #nav_for_media{
+  color: white;
   display: none;
 }
 
