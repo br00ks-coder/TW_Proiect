@@ -21,7 +21,7 @@
 
             <?php if ($validationResult): ?>
                 <!-- Display content for logged-in users -->
-            <li id="cart-window">
+            <li id="cart-window" style="display: none;">
                 <h2>Cart</h2>
                 <ul id="cart-items">
                 </ul>
@@ -100,7 +100,11 @@
             </a>
         </ul>
     </nav>
+
 </header>
+<div id="background"">
+
+</div>
 <script src="js/cart.js"></script>
 
 <script>

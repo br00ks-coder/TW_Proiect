@@ -9,7 +9,7 @@ main {
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
-    background:linear-gradient(hsl(246, 30%, 63%), hsl(20, 0%, 86%));
+    background-color: none;
 }
 
 .flowers {
@@ -25,12 +25,13 @@ main {
 .flower {
     border: 2px solid  hsl(220, 17%, 27%);;
     border-radius: 10px;
-    background: linear-gradient(hsl(246, 30%, 63%), hsl(20, 0%, 86%));
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px;
     width: 200px;
+    padding-bottom:2%;
 }
 
 .flower:hover {
@@ -77,4 +78,27 @@ main {
 }
 #humForm{
     left: 0;
+    display: flex;
+    justify-content: space-around;
+    width: fit-content;
+
+
+    padding: 0;
+}
+#water-button {
+    background-color: #4CAF50; /* Set the background color */
+    border: none; /* Remove the border */
+    color: white; /* Set the text color */
+    padding: 10px 20px; /* Add some padding around the text */
+    text-align: center; /* Center the text horizontally */
+    text-decoration: none; /* Remove the underline */
+    display: inline-block; /* Make it an inline element */
+    font-size: 16px; /* Set the font size */
+    cursor: pointer; /* Add a cursor effect on hover */
+    border-radius: 5px; /* Add rounded corners */
+    transition-duration: 0.4s; /* Add a smooth transition effect */
+}
+
+#water-button:hover {
+    background-color: #45a049; /* Change the background color on hover */
 }

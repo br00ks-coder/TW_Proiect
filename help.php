@@ -43,7 +43,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
 <?php include_once "./view/Header.php"; ?>
 
-<main style="height: fit-content">
+<main>
 
     <section class="help-section">
         <h2 class="help-heading">Categories</h2>

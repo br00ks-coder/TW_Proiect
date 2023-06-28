@@ -29,33 +29,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 </head>
 <body>
 <!-- Image for background -->
-<div id="background"
-     style="
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    background: linear-gradient(-45deg,#6EA751,#018749,#1cac78);
-    background-size: cover;
 
-    z-index: -1;
-    @keyframes  {
-        0%{
-            background-position: 0% 50%;
-        }
-        50%{
-            background-position: 100% 50%;
-        }
-        100%{
-
-            background-position: 0% 50%;
-
-        }
-    }
-    ">
-
-</div>
 <!-- Declared here to load as fast as possible -->
 
 <?php include_once "./view/Header.php"; ?>

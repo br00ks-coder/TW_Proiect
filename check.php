@@ -48,7 +48,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
 <main style="height: fit-content">
     <h2>My Harvests</h2>
-    <section class="harvest-flowers">
+    <section id="flower-section">
         <?php include_once "php/checkFunc.php"?>
     </section>
 

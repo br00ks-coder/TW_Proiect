@@ -28,7 +28,6 @@ include('php/flowers_admin.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/GeneralStyle.css"/>
-    <!-- <link rel="stylesheet" href="css/style.css" />-->
     <link rel="stylesheet" href="css/admin.css"/>
     <script
             src="https://kit.fontawesome.com/fb7068e0f1.js"
@@ -40,20 +39,7 @@ include('php/flowers_admin.php');
 
 <body>
 <!-- Image for background -->
-<div id="background"
-     style="
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    background-image: url('resources/background_lavender.jpeg');
-    background-size: cover;
-    filter: blur(4px);
-    z-index: -1;
-    ">
-    >
-</div>
+
 <!-- Declared here to load as fast as possible -->
 
 <nav class="nav_bar">
@@ -66,8 +52,11 @@ include('php/flowers_admin.php');
 
     </ul>
 </nav>
+<?php
+include_once './view/Header.php';
+?>
 
-<main style="display: flex;">
+<main id="main">
 
 
     <section>

@@ -66,6 +66,7 @@ li:active {
 }
 
 #open_menu, #nav_for_media{
+  color: white;
   display: none;
 }
 

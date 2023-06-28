@@ -92,11 +92,11 @@ function increaseQuantity(item) {
 function toggleCartWindow() {
     var cartWindow = document.getElementById("cart-window");
 
-    if (cartWindow.style.display === "none") {
-        cartWindow.style.display = "block";
+    if (cartWindow.style.display === "block") {
+        cartWindow.style.display = "none";
     } else {
         fetchCartItems();
-        cartWindow.style.display = "none";
+        cartWindow.style.display = "block";
     }
 }
 
