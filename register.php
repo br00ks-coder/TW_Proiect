@@ -50,19 +50,44 @@ include_once './view/Header.php';
 ?>
 
     <main>
-        <form method="POST" action="php/registerFunc.php">
-            <h2>Forum Registration</h2>
+
+
+
+
+        <script>
+            function validateForm() {
+                var email = document.getElementById("email").value;
+                var confirmEmail = document.getElementById("confirm-email").value;
+
+                if (email !== confirmEmail) {
+                    alert("Email and Confirm Email must match.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+        <form method="POST" action="php/registerFunc.php" onsubmit="return validateForm()">
+            <h2>Registration</h2>
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username2" name="username" />
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="confirm-email">Confirm Email:</label>
+                <input type="email" id="confirm-email" name="confirm-email" required />
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password2" name="password" />
+                <input type="password" id="password" name="password" required />
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password2" name="confirm-password" />
+                <input type="password" id="confirm-password" name="confirm-password" required />
             </div>
             <button type="submit">Register</button>
             <div id="message" style="z-index: 2;">
@@ -74,6 +99,11 @@ include_once './view/Header.php';
                 ?>
             </div>
         </form>
+
+
+
+
+
     </main>
 
 <?php

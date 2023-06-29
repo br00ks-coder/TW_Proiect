@@ -75,10 +75,9 @@ background-color: #3e8e41;
 }
 
 .contact-div {
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: none;
+
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -91,6 +90,7 @@ margin-bottom: 10px;
 }
 
 .contact-div form {
+  background-color: white;
 display: flex;
 flex-direction: column;
 }
@@ -101,10 +101,15 @@ margin-bottom: 5px;
 
 .contact-div input,
 .contact-div textarea {
+  width: auto;
 padding: 10px;
 margin-bottom: 10px;
 border-radius: 5px;
 border: none;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .contact-div textarea {
@@ -134,6 +139,7 @@ height: 50px;
 }
 
 #profileForm button {
+  margin-bottom: 5%;
   padding: 10px 20px;
   background-color: #4caf50;
   color: white;
@@ -268,6 +274,12 @@ background-position: center;
 
 }
 
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
 }
 
 
