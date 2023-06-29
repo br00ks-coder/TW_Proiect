@@ -138,9 +138,14 @@ include_once './view/Footer.php';
 
     textElements.forEach((textElement, index) => {
         const imageElement = imageElements[index];
-        const textHeight = getComputedStyle(textElement).height;
-        imageElement.style.setProperty('--text_height', textHeight);
+
+        // Check if imageElement is defined before accessing its properties
+        if (imageElement) {
+            const textHeight = getComputedStyle(textElement).height;
+            imageElement.style.setProperty('--text_height', textHeight);
+        }
     });
+
 
 </script>
 

@@ -57,19 +57,19 @@
         <ul>
 
             <a href="../about.php">
-                <li class="about_us">About Us</li>
+                <li class="about_us">About</li>
             </a>
             <a href="../check.php">
                 <li class="check_flowers">Check Flowers</li>
             </a>
             <a href="../buy.php">
-                <li class="buy_flowers">Buy Flowers</li>
+                <li class="buy_flowers">Shop</li>
             </a>
             <a href="../humidify.php">
                 <li class="humidify">Humidify</li>
             </a>
             <a href="../contact.php">
-                <li class="contact_button">Contact Us</li>
+                <li class="contact_button">Contact</li>
             </a>
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
@@ -80,12 +80,12 @@
         <ul>
 
             <a href="../about.php">
-                <li class="about_us">About Us</li>
+                <li class="about_us">About</li>
             </a>
             <a href="../buy.php">
-                <li class="buy_flowers">Buy Flowers</li>
+                <li class="buy_flowers">Shop</li>
             <a href="../contact.php">
-                <li class="contact_button">Contact Us</li>
+                <li class="contact_button">Contact</li>
             </a>
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>

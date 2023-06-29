@@ -16,10 +16,23 @@ if (!$userID || !$username) {
 // Step 4: Create the payload data for the JWT
 $payload = [
     'user_id' => $userID,
-    'username' => $username
+    'username' => $username,
+    'random_value' => generateRandomValue(),
+    'is_guest' => true // Set the is_guest flag to true for guest users
+    // Add any additional data you want to include in the payload
     // Add any additional data you want to include in the payload
 ];
-
+function generateRandomValue() {
+    // Generate a random string or number based on your requirements
+    // For example, to generate a random string of length 10:
+    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $length = 10;
+    $randomValue = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomValue .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomValue;
+}
 // Step 5: Generate the JWT token (same as before)
 
 $header = json_encode(['alg' => 'HS256', 'typ' => 'JWT']);
