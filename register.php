@@ -68,7 +68,7 @@ include_once './view/Header.php';
         </script>
 
         <form method="POST" action="php/registerFunc.php" onsubmit="return validateForm()">
-            <h2>Forum Registration</h2>
+            <h2>Registration</h2>
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required />
