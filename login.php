@@ -56,12 +56,39 @@ if($validationResult)
   include_once './view/Header.php';
   ?>
 
-<main style="height: 50vh;">
-   
-
-
+<main style="height: fit-content; margin-top: 10%;">
+    <script>
+        function showForgotPasswordForm(event) {
+            event.preventDefault();
+            var forgotPasswordForm = document.getElementById("forgot-password");
+            if (forgotPasswordForm.style.display === "block") {
+                forgotPasswordForm.style.display = "none";
+            } else {
+                forgotPasswordForm.style.display = "block";
+            }
+        }
+    </script>
+    <style>
+        #reset-password-button {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .form-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+        }
+    </style>
+    <div class="form-container">
     <form method="POST" action="php/loginFunc.php">
-
         <h2>Member login</h2>
         <div class="form-group">
             <label for="username">Username:</label>
@@ -70,11 +97,25 @@ if($validationResult)
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password">
-         </div>
+        </div>
         <button type="submit">Login</button>
-            <div id="message" style="z-index: 2;"></div>
+        <button id="reset-password-button" onclick="showForgotPasswordForm(event)">Forgot Password?</button>
 
+        <div id="message" style="z-index: 2;"></div>
     </form>
+
+    <div >
+        <form id="forgot-password" style="display: none;" method="POST" action="php/resetPassword.php">
+            <h2>Reset Password</h2>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <button type="submit" >Reset</button>
+        </form>
+    </div>
+    </div>
+
 
 
 </main>

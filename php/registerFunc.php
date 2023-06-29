@@ -17,9 +17,9 @@ if (!$dbconn) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the submitted form data
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm-password'];
-    // Add more fields as needed
 
     // Validate the form data
     if ($password !== $confirmPassword) {
@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Perform additional validation checks here...
 
     // Insert the user data into the database
-    $query = "INSERT INTO users (username, password) VALUES ($1, $2)";
-    $result = pg_query_params($dbconn, $query, array($username, $password));
+    $query = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
+    $result = pg_query_params($dbconn, $query, array($username, $email, $password));
 
     if ($result) {
         // Registration successful
