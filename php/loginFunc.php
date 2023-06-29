@@ -1,34 +1,24 @@
-
 <?php
 session_start();
-$host = 'webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com';
-$dbname = 'webgardening';
-$username = 'postgres';
-$password = 'paroladb';
-try {
-    $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
+if (!$dbconn) {
+    // Handle connection error
+    die("Connection failed: " . pg_last_error());
 }
-
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare('SELECT id, username, password, is_admin FROM users WHERE username = :username AND password = :password');
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password', $password);
-    $stmt->execute();
+    $query = "SELECT id, username, password, is_admin FROM users WHERE username = $1 AND password = $2";
+    $result = pg_query_params($dbconn, $query, array($username, $password));
 
-    if (!$stmt) {
-        $errorInfo = $pdo->errorInfo();
-        die("Query failed: " . $errorInfo[2]);
+    if (!$result) {
+        // Handle query error
+        die("Query failed: " . pg_last_error());
     }
 
-
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $row = pg_fetch_assoc($result);
     if ($row) {
         $userID = $row['id'];
         $username = $row['username'];
@@ -83,5 +73,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
+pg_close($dbconn);
 ?>
