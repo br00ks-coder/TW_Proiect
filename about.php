@@ -66,6 +66,12 @@ include_once './view/Header.php';
             hobby—it's a way to connect with nature, find solace in the beauty of plants, and create a harmonious
             environment.
         </p>
+        <p>
+            The creators of this project are:
+            Alexandru Balan,
+            Mihail Filimon,
+            Catalin Curlea,
+        </p>
     </div>
     <div class="flower-div" style="z-index: 2;">
     </div>

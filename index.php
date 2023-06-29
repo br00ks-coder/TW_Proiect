@@ -87,17 +87,25 @@ $humAverage = $humAverage / $flowerCount;
                  when you should water your flowers again.
             </p>
           </span></div>
+        <?php if ($validationResult): ?>
         <div class="section3 stats" id="Stats_progress_bar"> <span>
             <p>The humidity level in ground</p>
             <div class="progress_bar" style="width:100%">
               <div class="progress_bar_fill" style="width: 80%">
-              <?php echo $humAverage ?> </div>
+              <?php echo $humAverage ?>% </div>
             </div>
             <p>Your total number of flowers</p>
             <div class="progress_bar" style="width: 100%">
               <div class="progress_bar_fill" style="width: 60%">
               <?php echo $flowerStock ?>  </div>
             </div>
+                <?php else: ?>
+                    <div class="section3 text" id="Stats_text"> <span>
+                            <p>Please login or register in order to see more of our features!
+                            </p>
+                        </span></div>
+             <?php endif; ?>
+
             <br/>
           </span></div>
     </section>
