@@ -11,7 +11,7 @@ require 'php/jwtVerify.php';
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 if($validationResult)
 {
-    header("Location: profile.php");
+    header("Location: index.php");
 }
 
 ?>

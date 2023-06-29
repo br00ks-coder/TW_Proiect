@@ -70,7 +70,7 @@ include_once './view/Header.php';
             The creators of this project are:
             Alexandru Balan,
             Mihail Filimon,
-            Catalin Curlea,
+            Catalin Curlea
         </p>
     </div>
     <div class="flower-div" style="z-index: 2;">

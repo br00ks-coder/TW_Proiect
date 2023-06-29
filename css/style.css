@@ -12,7 +12,7 @@ main{
   padding-right: 3%;
   border-radius: 3%;
   padding-bottom: 2%;
-  color: hsl(220, 17%, 27%);
+  color: #ffffff;
 
 
   display: grid;
@@ -25,7 +25,7 @@ left: 50%;
 width: 400px;
 margin: 0 auto;
 padding: 20px;
-background-color: #fff;
+background: transparent;
 border-radius: 5px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -75,10 +75,8 @@ background-color: #3e8e41;
 }
 
 .contact-div {
-  background-color: #f2f2f2;
+  background: transparent;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -88,6 +86,7 @@ background-color: #3e8e41;
 
 .contact-div h2 {
 margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .contact-div form {
@@ -96,7 +95,8 @@ flex-direction: column;
 }
 
 .contact-div label {
-margin-bottom: 5px;
+  margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .contact-div input,
@@ -151,7 +151,7 @@ height: 50px;
 }
 
 .contact-div button {
-background-color: #4CAF50;
+background: transparent;
 color: white;
 padding: 10px;
 border: none;
@@ -161,7 +161,7 @@ transition: background-color 0.3s ease;
 }
 
 .contact-div button:hover {
-background-color: #3e8e41;
+background-color: #fe8a01;
 }
 .flower-div {
 width: 100%;
@@ -269,5 +269,6 @@ background-position: center;
 }
 
 }
+
 
 

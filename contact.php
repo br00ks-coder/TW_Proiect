@@ -10,6 +10,7 @@ require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
+
 ?>
 
 <!DOCTYPE html>
@@ -32,18 +33,18 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
   <body>
   <!-- Image for background -->
   <div id="background"
-       style="
+       style ="
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: fixed;
-    background-image: url('resources/background_lavender.jpeg');
+    background-image: url('resources/help.jpg');
     background-size: cover;
     filter: blur(4px);
     z-index: -1;
     ">
-      >
+
   </div>
   <!-- Declared here to load as fast as possible -->
 
@@ -62,7 +63,10 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
   <input type="email" id="email" name="email">
   <label for="message">Message:</label>
   <textarea id="message" name="message"></textarea>
-  <button type="submit">Send</button>
+      <button type="submit">Send</button>
+
+
+
 </form>
 </div>
 
