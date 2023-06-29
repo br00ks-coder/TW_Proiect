@@ -10,6 +10,23 @@ require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
+$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
+$query = "select flowers.name, flowers.available_quantity,flowers.flower_images , flowers_humidity.humidity from flowers join flowers_humidity on flowers.id = flowers_humidity.id;";
+$result = pg_query($dbconn, $query);
+$humAverage = 0;
+$flowerCount = 0;
+$flowerStock = 0;
+while ($row = pg_fetch_assoc($result)){
+
+$flowerAvailableQ = $row['available_quantity'];
+$flowerStock = $flowerStock + $flowerAvailableQ;
+
+$flowerHumidity = $row['humidity'];
+$humAverage = $humAverage + $flowerHumidity;
+$flowerCount++;
+}
+$humAverage = $humAverage / $flowerCount;
+
 ?>
 
 
@@ -74,17 +91,12 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
             <p>The humidity level in ground</p>
             <div class="progress_bar" style="width:100%">
               <div class="progress_bar_fill" style="width: 80%">
-                80%</div>
+              <?php echo $humAverage ?> </div>
             </div>
-            <p>The flower is % ready</p>
-            <div class="progress_bar" style="width: 100%">
-              <div class="progress_bar_fill" style="width: 90%">
-                90%</div>
-            </div>
-            <p>One more sensor</p>
+            <p>Your total number of flowers</p>
             <div class="progress_bar" style="width: 100%">
               <div class="progress_bar_fill" style="width: 60%">
-                60%</div>
+              <?php echo $flowerStock ?>  </div>
             </div>
             <br/>
           </span></div>
