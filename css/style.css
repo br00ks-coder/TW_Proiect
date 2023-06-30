@@ -252,6 +252,12 @@ background-position: center;
   left: 0%;
   box-shadow: none;
 }
+#extractForm{
+  left: 0;
+  width: fit-content;
+  padding: 0;
+
+}
 #background {
 
   top: 0;

@@ -31,6 +31,8 @@ die("Query failed: " . pg_last_error());
 echo "Flower successfully added!";
 // You can redirect to a success page if desired
 // header("Location: success.php");
+    header("Location: ../check.php");
+
 }
 
 pg_close($dbconn);
