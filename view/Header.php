@@ -68,9 +68,7 @@
             <a href="../humidify.php">
                 <li class="humidify">Garden</li>
             </a>
-            <a href="../checkout.php" >
-                <li class="contact_button">Checkout</li>
-            </a>
+
             <a href="../contact.php">
                 <li class="contact_button">Contact</li>
             </a>
@@ -94,9 +92,7 @@
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>
-                <a href="../checkout.php" >
-                    <li class="contact_button">Checkout</li>
-                </a>
+
         </ul>
 
              <?php endif; ?>
@@ -120,9 +116,7 @@
             <a href="../buy.php">
                 <li class="buy_flowers">Buy Flowers</li>
             </a>
-            <a href="../checkout.php" >
-                <li class="contact_button">Checkout</li>
-            </a>
+
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>

@@ -27,7 +27,7 @@ while ($row = pg_fetch_assoc($result)) {
 
     echo '<img class="flower-image" src="' . $flowerImg . '.jpg" >';
 
-    echo '<button onclick="addToCart(\'' . $flowerName . '\', ' . $flowerPrice . ', ' . $userId . ', ' . $sellerId . ')">Buy</button>';
+    echo '<button type = "button" onclick="addToCart(\'' . $flowerName . '\', ' . $flowerPrice . ', ' . $userId . ', ' . $sellerId . ')">Buy</button>';
     echo' <script src="js/cart.js"></script>';
     echo '</div>';
 
