@@ -78,19 +78,35 @@ function updateCartDisplay() {
     var saveBtn = document.createElement("button");
     saveBtn.textContent = "Save";
     saveBtn.classList.add("save-btn");
+    saveBtn.setAttribute('type', 'button');
     saveBtn.addEventListener("click", function() {
         saveCart();
-    });
 
+    });
     // Add save button to the cart
     cartItemsElement.appendChild(saveBtn);
+
+
 // Add the button to your HTML
     var emptyButton = document.createElement("button");
     emptyButton.textContent = "Empty Basket";
+    emptyButton.setAttribute('type', 'button');
     emptyButton.addEventListener("click", emptyCart);
 
 
     cartItemsElement.appendChild(emptyButton);
+    var checkoutButton = document.createElement("button");
+    checkoutButton.textContent = "Checkout";
+    checkoutButton.setAttribute('type', 'button');
+    checkoutButton.addEventListener("click", redirectFunction);
+    if (cartTotal > 0) {
+        cartItemsElement.appendChild(checkoutButton);
+    }
+
+}
+
+function redirectFunction() {
+    location.replace("../checkout.php");
 }
 function emptyCart() {
     // Clear the cartItems array (assuming it's a global variable)

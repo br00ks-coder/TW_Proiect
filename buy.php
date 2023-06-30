@@ -62,27 +62,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         <h2>Growing Garden: Blooms in Progress</h2>
     </section>
 
-    <script>
-        function followFlower(clientId, sellerId, flowerName) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "php/addFollow.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    // Handle the response from the server if needed
-                    console.log(xhr.responseText);
-                    // Update the button label based on the response
-                    var heartButton = document.getElementById("heart-button");
-                    if (xhr.responseText === "followed") {
-                        heartButton.textContent = "Watching";
-                    } else if (xhr.responseText === "unfollowed") {
-                        heartButton.textContent = "Follow";
-                    }
-                }
-            };
-            xhr.send("clientId=" + clientId + "&sellerId=" + sellerId + "&flowerName=" + flowerName);
-        }
-    </script>
+
 
 
 
