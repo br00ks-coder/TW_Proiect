@@ -1,13 +1,14 @@
 var cartItems = [];
 var cartTotal = 0;
 
-function addToCart(name, price, user_id) {
+function addToCart(name, price, user_id, seller_id) {
 
 
     var data = {
         name: name,
         price: price,
-        user_id: user_id
+        user_id: user_id,
+        seller_id : seller_id
     };
 
     fetch('php/insert_cart_items.php', {

@@ -56,12 +56,34 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         <?php include_once "php/humFunc.php"            ?>
     </section>
 
+    <script>
+        function setFlowerImages() {
+            var nameInput = document.getElementById("name");
+            var flowerImagesInput = document.getElementById("flower_images");
+            flowerImagesInput.value = nameInput.value;
+        }
+    </script>
+
     <form id="add-flowers" method="POST" action="php/addOwnFlower.php">
         <h2>Add Flower</h2>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <select id="name" name="name" required>
+            <option value="rosee">Rose</option>
+            <option value="tulip">Tulip</option>
+            <option value="lily">Lily</option>
+            <option value="orchid">Orchid</option>
+            <option value="daisy">Daisy</option>
+            <option value="carnation">Carnation</option>
+            <option value="daffodil">Daffodil</option>
+            <option value="hydrangea">Hydrangea</option>
+            <option value="peony">Peony</option>
+        </select>
 
-        <label for="description">Description:</label>
+
+
+
+
+    <label for="description">Description:</label>
         <textarea id="description" name="description" required></textarea>
 
         <label for="price">Price:</label>
@@ -81,11 +103,10 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         <input type="number" id="humidity" name="humidity" required>
 
         <input type="hidden" name="userId" id="userId" value="<?php echo $userId; ?>">
+<br>
+        <input type="text" id="flower_images" name="flower_images" style="display: none;">
+        <input type="submit" value="Add Flower" onclick="setFlowerImages()">
 
-        <label for="flower_images">Flower Images:</label>
-        <input type="text" id="flower_images" name="flower_images" required>
-
-        <input type="submit" value="Add Flower">
     </form>
 
 

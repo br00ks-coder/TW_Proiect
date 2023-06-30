@@ -13,7 +13,8 @@ $userId = $_POST['userId'];
 $description = $_POST['description'];
 $availableQuantity = $_POST['availableQuantity'];
 $difficulty = $_POST['difficulty'];
-$flowerImages = $_POST['flowerImages'];
+    $flowerImages = $_POST['flowerImages'];
+    $flowerImages = substr($flowerImages, 0, -4);
 
 $query = "INSERT INTO flowers (name, price, user_id, description, available_quantity, difficulty, flower_images)
 VALUES ($1, $2, $3, $4, $5, $6, $7)";
