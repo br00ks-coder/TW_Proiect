@@ -9,9 +9,29 @@ $secretKey = 'your-secret-key'; // Replace with your own secret key
 require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-
+$local_id = getUserFromJwt($jwtToken,$secretKey)['user_id'];
 $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
+$query = "SELECT  available_quantity, humidity, user_id FROM flowers_humidity WHERE user_id = $local_id ";
+$result = pg_query($dbconn, $query);
+$humAverage = 0;
+$flowerCount = 0;
+$flowerStock = 0;
+while ($row = pg_fetch_assoc($result)){
 
+    $flowerAvailableQ = $row['available_quantity'];
+    $flowerStock = $flowerStock + $flowerAvailableQ;
+
+    $flowerHumidity = $row['humidity'];
+    $humAverage = $humAverage + $flowerHumidity;
+    $flowerCount++;
+}
+
+if($flowerCount == 0){
+
+    $humAverage = 0;
+}else{
+    $humAverage = $humAverage /$flowerCount;
+}
 ?>
 
 

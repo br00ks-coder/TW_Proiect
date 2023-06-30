@@ -8,11 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3603369f-5cdb-4d2c-bed3-e5ebe9954469.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3603369f-5cdb-4d2c-bed3-e5ebe9954469.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/buy.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/buy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/buy_func.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/buy_func.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,7 @@
       <updated>1687785604699</updated>
       <workItem from="1687785605698" duration="1320000" />
       <workItem from="1688049751522" duration="10942000" />
-      <workItem from="1688143046897" duration="1013000" />
+      <workItem from="1688143046897" duration="2139000" />
     </task>
     <servers />
   </component>
