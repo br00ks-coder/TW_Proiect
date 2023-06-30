@@ -11,13 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $humidity = $_POST['humidity'];
     $flowerImages = $_POST['flower_images'];
     $userId = $_POST['userId'];
-
+    $flowerImages= "resources/" . $flowerImages;
     // Connect to the database
     $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
     if (!$dbconn) {
         // Handle connection error
         die("Connection failed: " . pg_last_error());
     }
+
+
 
     // Insert the flower data into the database
     $query = "INSERT INTO flowers_humidity (name, description, price, available_quantity, difficulty, humidity, flower_images, user_id)

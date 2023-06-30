@@ -16,6 +16,7 @@ $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws
         $flowerDiff = $row['difficulty'];
         $flowerAvailableQ = $row['available_quantity'];
         $flowerImg = $row['flower_images'];
+        $sellerId = $row['user_id'];
 
         echo '<div class="flower">';
         echo '<h3>' . $flowerName . '</h3>';
@@ -26,7 +27,7 @@ $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws
 
         echo '<img class="flower-image" src="' . $flowerImg . '.jpg" >';
 
-        echo '<button onclick="addToCart(\'' . $flowerName . '\', ' . $flowerPrice . ', ' . $userId . ')">Buy</button>';
+        echo '<button onclick="addToCart(\'' . $flowerName . '\', ' . $flowerPrice . ', ' . $userId . ', ' . $sellerId . ')">Buy</button>';
        echo' <script src="js/cart.js"></script>';
         echo '</div>';
 

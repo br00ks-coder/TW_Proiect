@@ -16,13 +16,14 @@ $cartItems = json_decode($jsonData, true);
     $productName = $cartItems['name'];
     $productPrice = $cartItems['price'];
     $userId = $cartItems['user_id'];
+$sellerId = $cartItems['seller_id'];
 
 // Insert the item into the database using prepared statements (recommended for security)
-$query = "INSERT INTO shopping_cart (product_name, price, user_id, quantity)
-          VALUES ($1, $2, $3, 1)
+$query = "INSERT INTO shopping_cart (product_name, price, user_id, quantity,seller_id)
+          VALUES ($1, $2, $3, 1,$4)
           ON CONFLICT (product_name, user_id)
           DO UPDATE SET quantity = shopping_cart.quantity + 1";
-$result = pg_query_params($dbconn, $query, array($productName, $productPrice, $userId));
+$result = pg_query_params($dbconn, $query, array($productName, $productPrice, $userId,$sellerId));
 
 if (!$result) {
         // Failed to insert item into the database
