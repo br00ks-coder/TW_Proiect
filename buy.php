@@ -57,6 +57,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <h2>Featured Flowers</h2>
     <section class="flowers">
         <?php include_once "php/buy_func.php" ?>
+
     </section>
     <section>
         <h2>Growing Garden: Blooms in Progress</h2>

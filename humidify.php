@@ -10,12 +10,12 @@ require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Head content goes here -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,36 +23,22 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/buy.css" />
     <script
-        src="https://kit.fontawesome.com/fb7068e0f1.js"
-        crossorigin="anonymous"
+            src="https://kit.fontawesome.com/fb7068e0f1.js"
+            crossorigin="anonymous"
     ></script>
     <!--used for icons-->
     <title>Web Gardening</title>
 </head>
 
 <body>
-<!-- Image for background -->
-<div id="background"
-     style="
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    background-image: url('resources/background_lavender.jpeg');
-    background-size: cover;
-    filter: blur(4px);
-    z-index: -1;
-    ">
-    >
-</div>
-<!-- Declared here to load as fast as possible -->
+<!-- Body content goes here -->
 
 <?php include_once "./view/Header.php"; ?>
 
 <main style="height: fit-content">
     <h2>Planted Flowers</h2>
     <section class="flowers">
+<<<<<<< HEAD
         <?php include_once "php/humFunc.php"            ?>
     </section>
 
@@ -108,18 +94,9 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
         <input type="submit" value="Add Flower" onclick="setFlowerImages()">
 
     </form>
-
-
-
-
-
-
-
 </main>
 
-<?php
-include_once './view/Footer.php';
-?>
+<?php include_once './view/Footer.php'; ?>
 
 </body>
 
