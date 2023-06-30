@@ -31,8 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $params = array($firstName, $lastName, $street, $city, $zipCode, $deliveryType, $paymentMethod, $totalPrice, $userId);
     $result = pg_query_params($dbconn, $query, $params);
 
-    $query = "DELETE FROM shopping_cart WHERE user_id = $1";
-    $result = pg_query_params($dbconn, $query, array($userId));
+
 
     $query = "SELECT product_name, user_id, seller_id FROM shopping_cart WHERE user_id = '$userId'";
     $result = pg_query($dbconn, $query);
@@ -47,6 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     }
+
+    $query = "DELETE FROM shopping_cart WHERE user_id = $1";
+    $result = pg_query_params($dbconn, $query, array($userId));
 // Replace <seller_id> with the actual seller ID value
 
 
