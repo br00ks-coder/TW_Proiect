@@ -1,7 +1,5 @@
 <?php
 
-namespace Controller\Api;
-
 use JetBrains\PhpStorm\NoReturn;
 
 class BaseController
@@ -20,7 +18,6 @@ class BaseController
      *
      * @return array
      */
-
     protected function getUriSegments(): array
     {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -32,11 +29,30 @@ class BaseController
      *
      * @return array
      */
-
     protected function getQueryStringParams(): array
     {
         parse_str($_SERVER['QUERY_STRING'], $query);
         return $query;
+    }
+
+    /**
+     * Get the request body as an associative array
+     *
+     * @return array|null
+     */
+    protected function getRequestBody(): ?array
+    {
+        $contentType = $_SERVER['CONTENT_TYPE'] ?? '';
+
+        if (stripos($contentType, 'application/json') !== false) {
+            // Request body is in JSON format
+            $json = file_get_contents('php://input');
+            $data = json_decode($json, true);
+            return is_array($data) ? $data : null;
+        } else {
+            // Request body is not in JSON format (e.g., form data)
+            return $_POST;
+        }
     }
 
     /**
@@ -45,7 +61,6 @@ class BaseController
      * @param mixed $data
      * @param array $httpHeaders
      */
-
     #[NoReturn] protected function sendOutput(mixed $data, array $httpHeaders = array()): void
     {
         header_remove('Set-Cookie');

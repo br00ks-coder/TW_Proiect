@@ -1,5 +1,4 @@
 <?php
-use Controller\Api\FlowerController;
 
 require_once __DIR__ . "/inc/project_root.php";
 
@@ -16,7 +15,3 @@ require_once PROJECT_ROOT_PATH . "/Controller/Api/FlowerController.php";
 $objFeedController = new FlowerController();
 $strMethodName = $uri[3]  . 'Action';
 $objFeedController->{$strMethodName}();
-
-
-
-

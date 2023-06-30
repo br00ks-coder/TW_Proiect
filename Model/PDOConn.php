@@ -1,6 +1,5 @@
 <?php
 
-namespace Model;
 class PDOConn
 {
     protected ?PDO $connection = null;
@@ -48,7 +47,27 @@ class PDOConn
     /**
      * @throws Exception
      */
-    private function executeStatement($query = "", $params = []): PDOStatement
+    public function add($query = "", $params = []): bool|array{
+        try {
+            $stmt = $this->connection->prepare($query);
+            if ($stmt === false) {
+                throw new Exception("Unable to prepare statement: " . $query);
+            }
+
+            foreach ($params as $param => $value) {
+                $stmt->bindValue(':' . $param, $value);
+            }
+
+            return $stmt->execute();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    /**
+     * @throws Exception
+     */
+    protected function executeStatement($query = "", $params = []): PDOStatement
     {
         try {
             $stmt = $this->connection->prepare($query);
