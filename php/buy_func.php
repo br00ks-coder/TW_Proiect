@@ -6,32 +6,68 @@ $secretKey = 'your-secret-key';
 
 // Call the function to get the user ID from the JWT
 $userId = getUserFromJwt($jwtToken, $secretKey)['user_id']; // Replace $secretKey with your actual secret key
-$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
-$query = "SELECT * FROM flowers";
-$result = pg_query($dbconn, $query);
-while ($row = pg_fetch_assoc($result)) {
-    $flowerName = $row['name'];
-    $flowerPrice = $row['price'];
-    $flowerDesc = $row['description'];
-    $flowerDiff = $row['difficulty'];
-    $flowerAvailableQ = $row['available_quantity'];
-    $flowerImg = $row['flower_images'];
-    $sellerId = $row['user_id'];
+$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 
+dbname=webgardening 
+user=postgres 
+password=paroladb");
 
-    echo '<div class="flower">';
-    echo '<h3>' . $flowerName . '</h3>';
-    echo '<p>Description: ' . $flowerDesc . '</p>';
-    echo '<p>Price: ' . $flowerPrice . '</p>';
-    echo '<p>Difficulty to Maintain: ' . $flowerDiff . '</p>';
-    echo '<p>Available Quantity: ' . $flowerAvailableQ . '</p>';
+//$query = "SELECT * FROM flowers";
+//$result = pg_query($dbconn, $query);
+//while ($row = pg_fetch_assoc($result)) {
+//    $flowerName = $row['name'];
+//    $flowerPrice = $row['price'];
+//    $flowerDesc = $row['description'];
+//    $flowerDiff = $row['difficulty'];
+//    $flowerAvailableQ = $row['available_quantity'];
+//    $flowerImg = $row['flower_images'];
+//    $sellerId = $row['user_id'];
 
-    echo '<img class="flower-image" src="' . $flowerImg . '.jpg" >';
+$apiUrl = 'http://localhost/flowersEP.php/flowers/list';
 
-    echo '<button type = "button" onclick="addToCart(\'' . $flowerName . '\', ' . $flowerPrice . ', ' . $userId . ', ' . $sellerId . ')">Buy</button>';
-    echo' <script src="js/cart.js"></script>';
-    echo '</div>';
+// Make a GET request to the API
+$response = file_get_contents($apiUrl);
+$responseData = json_decode($response, true);
+
+if (isset($responseData['error'])) {
+    echo '<p>An error occurred: ' . $responseData['error'] . '</p>';
+} else {
+    $flowers = $responseData;
+    if (count($flowers) > 0) {
+        echo '<table>';
+        echo '<tr><th>Name</th><th>Description</th><th>Price</th><th>Available Quantity</th><th>Difficulty</th></tr>';
+
+        foreach ($flowers as $flower) {
+            echo '<tr>';
+            echo '<td>' . $flower['name'] . '</td>';
+            echo '<td>' . $flower['description'] . '</td>';
+            echo '<td>' . $flower['price'] . '</td>';
+            echo '<td>' . $flower['available_quantity'] . '</td>';
+            echo '<td>' . $flower['difficulty'] . '</td>';
+//            echo '<button type = "button" onclick="addToCart(\'' . $flower['name'] . '\', ' . $flowerPrice . ', ' . $userId . ', ' . $sellerId . ')">Buy</button>';
+            echo ' <script src="/js/cart.js"></script>';
+            echo '</div>';
+            echo '</tr>';
+        }
+
+        echo '</table>';
+    } else {
+        echo '<p>No flowers found.</p>';
+    }
+}
+//
+//    echo '<div class="flower">';
+//    echo '<h3>' . $flowerName . '</h3>';
+//    echo '<p>Description: ' . $flowerDesc . '</p>';
+//    echo '<p>Price: ' . $flowerPrice . '</p>';
+//    echo '<p>Difficulty to Maintain: ' . $flowerDiff . '</p>';
+//    echo '<p>Available Quantity: ' . $flowerAvailableQ . '</p>';
+//
+//    echo '<img class="flower-image" src="' . $flowerImg . '.jpg" >';
+
 
 }
 
 
 ?>
+
+

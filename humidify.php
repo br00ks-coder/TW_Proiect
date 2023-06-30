@@ -38,7 +38,6 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 <main style="height: fit-content">
     <h2>Planted Flowers</h2>
     <section class="flowers">
-<<<<<<< HEAD
         <?php include_once "php/humFunc.php"            ?>
     </section>
 
@@ -64,9 +63,6 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
             <option value="hydrangea">Hydrangea</option>
             <option value="peony">Peony</option>
         </select>
-
-
-
 
 
     <label for="description">Description:</label>
