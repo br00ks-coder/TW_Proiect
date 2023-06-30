@@ -8,8 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buy.php" beforeDir="false" afterPath="$PROJECT_DIR$/buy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/humidify.php" beforeDir="false" afterPath="$PROJECT_DIR$/humidify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/addOwnFlower.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/addOwnFlower.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/buy_func.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/buy_func.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/cart_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/cart_update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/insert_cart_items.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/insert_cart_items.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/place_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/place_order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/profileFunc.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/profileFunc.php" afterDir="false" />

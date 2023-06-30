@@ -21,6 +21,7 @@ foreach ($cartItems as $item) {
     $productName = $item['name'];
     $quantity = $item['quantity'];
 
+    error_log('Seller ID: ' . $quantity);
     // Update the item in the database using prepared statements
     $query = "UPDATE shopping_cart SET quantity = $1
               WHERE product_name = $2 AND user_id = $3";
