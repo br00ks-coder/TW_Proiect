@@ -51,10 +51,43 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 <?php include_once "./view/Header.php"; ?>
 
 <main style="height: fit-content">
-    <h2>Featured Flowers</h2>
+    <h2>Planted Flowers</h2>
     <section class="flowers">
         <?php include_once "php/humFunc.php"            ?>
     </section>
+
+    <form id="add-flowers" method="POST" action="php/addOwnFlower.php">
+        <h2>Add Flower</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+
+        <label for="available_quantity">Available Quantity:</label>
+        <input type="number" id="available_quantity" name="available_quantity" required>
+
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" name="difficulty" required>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+
+        <label for="humidity">Humidity:</label>
+        <input type="number" id="humidity" name="humidity" required>
+
+        <input type="hidden" name="userId" id="userId" value="<?php echo $userId; ?>">
+
+        <label for="flower_images">Flower Images:</label>
+        <input type="text" id="flower_images" name="flower_images" required>
+
+        <input type="submit" value="Add Flower">
+    </form>
+
 
 
 
