@@ -41,10 +41,13 @@ if (isset($responseData['error'])) {
             echo '<p>Price: ' . $flower['price'] . '</p>';
             echo '<p>Available Quantity: ' . $flower['available_quantity'] . '</p>';
             echo '<p>Difficulty to Maintain: ' . $flower['difficulty'] . '</p>';
-//            echo '<button type = "button" onclick="addToCart(\'' . $flower['name'] . '\', ' . $flowerPrice . ', ' . $userId . ', ' . $sellerId . ')">Buy</button>';
+            echo '<img class="flower-image" src="' . $flower['flower_images'] . '.jpg" >';
+            echo '<button type = "button" onclick="addToCart(\'' . $flower['name']
+                . '\', ' . $flower['price']
+                . ', ' . $userId .
+                ', ' . $flower['user_id'] . ')">Buy</button>';
             echo ' <script src="/js/cart.js"></script>';
             echo '</div>';
-            echo '</tr>';
         }
 
         echo '</table>';
@@ -52,19 +55,6 @@ if (isset($responseData['error'])) {
         echo '<p>No flowers found.</p>';
     }
 }
-//
-//    echo '<div class="flower">';
-//    echo '<h3>' . $flowerName . '</h3>';
-//    echo '<p>Description: ' . $flowerDesc . '</p>';
-//    echo '<p>Price: ' . $flowerPrice . '</p>';
-//    echo '<p>Difficulty to Maintain: ' . $flowerDiff . '</p>';
-//    echo '<p>Available Quantity: ' . $flowerAvailableQ . '</p>';
-//
-//    echo '<img class="flower-image" src="' . $flowerImg . '.jpg" >';
-
-
-}
-
 
 ?>
 
