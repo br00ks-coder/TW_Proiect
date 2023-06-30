@@ -1,6 +1,6 @@
 <?php   
 session_start();
-fget
+
 $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
 if (!$dbconn) {
     // Handle connection error

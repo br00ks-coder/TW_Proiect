@@ -67,7 +67,7 @@ include_once './view/Header.php';
           <input type="password" id="newPwd" name="newPwd" placeholder="new password"><br><br>
           <label for="newPwdCon">Confirm new password:</label><br>
           <input type="password" id="newPwdCon" name="newPwdCon" placeholder="confirm password"><br><br>
-          <button id="changePwdBtn">Change Password</button>
+          <button id="changePwdBtn" type="submit">Change Password</button>
           <?php if (getUserFromJwt($jwtToken, $secretKey)['username'] == 'admin'): ?>
               <a href="admin.php">
                   <i class="fa-solid fa-screwdriver-wrench" style="display: inline-block; padding-top: 100%;"></i>

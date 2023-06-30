@@ -11,7 +11,10 @@
       <change beforePath="$PROJECT_DIR$/php/addOwnFlower.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/addOwnFlower.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/buy_func.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/buy_func.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/insert_cart_items.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/insert_cart_items.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/place_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/place_order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/profileFunc.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/profileFunc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/sellFlower.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/sellFlower.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/roseBuy.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
