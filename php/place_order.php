@@ -34,6 +34,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "DELETE FROM shopping_cart WHERE user_id = $1";
     $result = pg_query_params($dbconn, $query, array($userId));
 
+    $query = "SELECT product_name, user_id, seller_id FROM shopping_cart WHERE user_id = '$userId'";
+    $result = pg_query($dbconn, $query);
+    while ($row = pg_fetch_assoc($result)) {
+        $productName = $row['product_name'];
+        $userId = $row['user_id'];
+        $sellerId = $row['seller_id'];
+
+        // Delete matching flowers from flowers table
+        $deleteQuery = "DELETE FROM flowers WHERE name = '$productName' AND user_id = '$sellerId'";
+        $deleteResult = pg_query($dbconn, $deleteQuery);
+
+
+    }
+// Replace <seller_id> with the actual seller ID value
+
 
     if (!$result) {
         // Handle query error
@@ -48,4 +63,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 pg_close($dbconn);
-?>
+
