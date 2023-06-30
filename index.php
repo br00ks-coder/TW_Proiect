@@ -16,6 +16,7 @@ $result = pg_query($dbconn, $query);
 $humAverage = 0;
 $flowerCount = 0;
 $flowerStock = 0;
+if($result){
 while ($row = pg_fetch_assoc($result)){
 
     $flowerAvailableQ = $row['available_quantity'];
@@ -25,7 +26,7 @@ while ($row = pg_fetch_assoc($result)){
     $humAverage = $humAverage + $flowerHumidity;
     $flowerCount++;
 }
-
+}
 if($flowerCount == 0){
 
     $humAverage = 0;
