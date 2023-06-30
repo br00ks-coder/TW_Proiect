@@ -73,6 +73,83 @@ function updateCartDisplay() {
 
     // Update the cart total
     cartTotalElement.textContent = cartTotal.toFixed(2);
+    // Create save button
+    var saveBtn = document.createElement("button");
+    saveBtn.textContent = "Save";
+    saveBtn.classList.add("save-btn");
+    saveBtn.addEventListener("click", function() {
+        saveCart();
+    });
+
+    // Add save button to the cart
+    cartItemsElement.appendChild(saveBtn);
+// Add the button to your HTML
+    var emptyButton = document.createElement("button");
+    emptyButton.textContent = "Empty Basket";
+    emptyButton.addEventListener("click", emptyCart);
+
+
+    cartItemsElement.appendChild(emptyButton);
+}
+function emptyCart() {
+    // Clear the cartItems array (assuming it's a global variable)
+    cartItems = [];
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../php/cart_empty.php', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Cart emptied successfully
+                console.log('Cart emptied successfully!');
+                // Update the cart display or perform any other necessary actions
+                updateCartDisplay();
+            } else {
+                // Failed to empty the cart
+                console.log('Error emptying cart: ' + xhr.responseText);
+            }
+        }
+    };
+
+    // Send the request with the user ID
+    var jwtCookie = getCookie("jwt_token");
+    var data = JSON.stringify({ token: jwtCookie });
+    xhr.send(data);
+    // Update the cart display
+    updateCartDisplay();
+}
+
+function saveCart() {
+    // Make an AJAX request to a PHP script that modifies the database
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "../php/cart_update.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    var jwtCookie = getCookie("jwt_token");
+
+    // Add the user_id to the cartItems data
+    var cartItemsWithUserId = { "cartItems": cartItems, "token": jwtCookie };
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server if needed
+            console.log(xhr.responseText);
+        }
+    };
+
+    xhr.send(JSON.stringify(cartItemsWithUserId));
+}
+function getCookie(name) {
+    var cookieArray = document.cookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i].trim();
+        if (cookie.indexOf(name + '=') === 0) {
+            var cookieValue = cookie.substring(name.length + 1); // Extract the value part of the cookie
+            return cookieValue;
+        }
+    }
+    return "";
 }
 
 // Function to decrease quantity

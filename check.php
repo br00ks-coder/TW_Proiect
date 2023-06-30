@@ -17,7 +17,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/GeneralStyle.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/check.css"/>
+    <link rel="stylesheet" href="css/buy.css"/>
     <script
             src="https://kit.fontawesome.com/fb7068e0f1.js"
             crossorigin="anonymous"
@@ -47,11 +47,40 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 <?php include_once "./view/Header.php"; ?>
 
 <main style="height: fit-content">
-    <h2>My Harvests</h2>
-    <section id="flower-section">
-        <?php include_once "php/checkFunc.php"?>
+    <h2>My Flowers</h2>
+    <section class="flowers">
+        <?php include_once "php/checkFunc.php" ?>
     </section>
+        <section >
 
+            <form id="add-flowers" method="POST" action="php/add.php">
+                <h2>Add Flower</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+
+                <label for="available_quantity">Available Quantity:</label>
+                <input type="number" id="available_quantity" name="available_quantity" required>
+
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+                <input style="display: none;" name="userId" id="userId" value="<?php echo $userId?>">
+
+                <label for="flower_images">Flower Images:</label>
+                <input type="text" id="flower_images" name="flower_images" required>
+
+                <input type="submit" value="Add Flower">
+            </form>
+        </section>
 </main>
 
 <?php

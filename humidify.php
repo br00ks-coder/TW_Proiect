@@ -57,9 +57,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     </section>
 
 
-            <form id="humForm" method="POST">
-                <button id="water-button" type="submit" name="water_flowers">Water Flowers</button>
-            </form>
+
 
 
 

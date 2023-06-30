@@ -10,6 +10,23 @@ require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
+$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
+$query = "select flowers.name, flowers.available_quantity,flowers.flower_images , flowers_humidity.humidity from flowers join flowers_humidity on flowers.id = flowers_humidity.id;";
+$result = pg_query($dbconn, $query);
+$humAverage = 0;
+$flowerCount = 0;
+$flowerStock = 0;
+while ($row = pg_fetch_assoc($result)){
+
+$flowerAvailableQ = $row['available_quantity'];
+$flowerStock = $flowerStock + $flowerAvailableQ;
+
+$flowerHumidity = $row['humidity'];
+$humAverage = $humAverage + $flowerHumidity;
+$flowerCount++;
+}
+$humAverage = $humAverage / $flowerCount;
+
 ?>
 
 
@@ -70,22 +87,25 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
                  when you should water your flowers again.
             </p>
           </span></div>
+        <?php if ($validationResult): ?>
         <div class="section3 stats" id="Stats_progress_bar"> <span>
             <p>The humidity level in ground</p>
             <div class="progress_bar" style="width:100%">
               <div class="progress_bar_fill" style="width: 80%">
-                80%</div>
+              <?php echo $humAverage ?>% </div>
             </div>
-            <p>The flower is % ready</p>
-            <div class="progress_bar" style="width: 100%">
-              <div class="progress_bar_fill" style="width: 90%">
-                90%</div>
-            </div>
-            <p>One more sensor</p>
+            <p>Your total number of flowers</p>
             <div class="progress_bar" style="width: 100%">
               <div class="progress_bar_fill" style="width: 60%">
-                60%</div>
+              <?php echo $flowerStock ?>  </div>
             </div>
+                <?php else: ?>
+                    <div class="section3 text" id="Stats_text"> <span>
+                            <p>Please login or register in order to see more of our features!
+                            </p>
+                        </span></div>
+             <?php endif; ?>
+
             <br/>
           </span></div>
     </section>
@@ -118,9 +138,14 @@ include_once './view/Footer.php';
 
     textElements.forEach((textElement, index) => {
         const imageElement = imageElements[index];
-        const textHeight = getComputedStyle(textElement).height;
-        imageElement.style.setProperty('--text_height', textHeight);
+
+        // Check if imageElement is defined before accessing its properties
+        if (imageElement) {
+            const textHeight = getComputedStyle(textElement).height;
+            imageElement.style.setProperty('--text_height', textHeight);
+        }
     });
+
 
 </script>
 

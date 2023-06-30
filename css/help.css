@@ -37,17 +37,8 @@
     margin-bottom: 10px;
 }
 
-.help-category-description,
-.help-instruction-description {
-    font-size: 25px;
-    color: #ffffff;
-}
-.help-category-description:hover,
-.help-instruction-description:hover {
-    color: #fe8a01;
-    transform: translate(-10%, -10%); /* Changing the position */
-    transition: transform 0.6s;
-}
+
+
 /* Media query for responsive layout */
 @media only screen and (max-width: 576px) {
     .help-section {

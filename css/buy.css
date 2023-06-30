@@ -21,11 +21,21 @@ main {
     gap: 40px;
     justify-content: space-evenly;
 }
+#add-flowers{
 
+    position: relative;
+    left: 0%;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .flower {
     border: 2px solid  hsl(220, 17%, 27%);;
     border-radius: 10px;
-    background: #74cc8c;
+    background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,17 +44,8 @@ main {
     padding-bottom:2%;
 }
 
-.flower:hover {
-    box-shadow: 4px 6px hsl(246, 30%, 79%);
-    transform: translate(-10%, -10%);
-    transition: transform 0.6s;
-}
 
-.flower:active {
-    background-color: hsl(246, 30%, 70%);
-    transform: scale(0.9);
-    transition: transform 0.5s;
-}
+
 
 .flower h3 {
     margin-top: 10px;
