@@ -14,7 +14,7 @@ if(!$validationResult)
     header("Location: login.php");
 }
 
-
+$userId=getUserFromJwt($jwtToken,$secretKey)['user_id'];
 
 ?>
 
@@ -52,28 +52,51 @@ if(!$validationResult)
 <!-- Declared here to load as fast as possible -->
 <?php
 include_once './view/Header.php';
+require 'php/2fa.php';
+
 ?>
 
-  <main class="mainProfile">
+  <main class="mainProfile" style="display: flex;margin-top: 10%;">
+
+<section>
+    <form id="profileForm" action="php/profileFunc.php" method="POST"style="left: 50%;">
+        <label for="username">Username: <span id="username"><?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?></span></label><br>
+        <input type="hidden" name="username" value="<?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?>">
+        <label for="oldPwd">Current password:</label><br>
+        <input type="password" id="oldPwd" name="oldPwd" placeholder="current password"><br><br>
+        <label for="newPwd">New Password:</label><br>
+        <input type="password" id="newPwd" name="newPwd" placeholder="new password"><br><br>
+        <label for="newPwdCon">Confirm new password:</label><br>
+        <input type="password" id="newPwdCon" name="newPwdCon" placeholder="confirm password"><br><br>
+        <button id="changePwdBtn" type="submit">Change Password</button>
+        <?php if (getUserFromJwt($jwtToken, $secretKey)['username'] == 'admin'): ?>
+            <a href="admin.php">
+                <i class="fa-solid fa-screwdriver-wrench" style="display: inline-block; padding-top: 100%;"></i>
+            </a>
+        <?php endif; ?>
+    </form>
+</section>
 
 
 
-      <form id="profileForm" action="php/profileFunc.php" method="POST">
-          <label for="username">Username: <span id="username"><?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?></span></label><br>
-          <input type="hidden" name="username" value="<?php echo getUserFromJwt($jwtToken, $secretKey)['username']; ?>">
-          <label for="oldPwd">Current password:</label><br>
-          <input type="password" id="oldPwd" name="oldPwd" placeholder="current password"><br><br>
-          <label for="newPwd">New Password:</label><br>
-          <input type="password" id="newPwd" name="newPwd" placeholder="new password"><br><br>
-          <label for="newPwdCon">Confirm new password:</label><br>
-          <input type="password" id="newPwdCon" name="newPwdCon" placeholder="confirm password"><br><br>
-          <button id="changePwdBtn" type="submit">Change Password</button>
-          <?php if (getUserFromJwt($jwtToken, $secretKey)['username'] == 'admin'): ?>
-              <a href="admin.php">
-                  <i class="fa-solid fa-screwdriver-wrench" style="display: inline-block; padding-top: 100%;"></i>
-              </a>
-          <?php endif; ?>
-      </form>
+      <section>
+          <form method="POST" action="php/2fa.php">
+              <input type="hidden" name="userid" value="<?php echo getUserFromJwt($jwtToken, $secretKey)['user_id']; ?>">
+              <label for="enable-2fa">Enable Two-Factor Authentication:</label>
+              <input type="checkbox" id="enable-2fa" name="enable-2fa" <?php echo userChecked($userId) ? 'checked' : ''; ?>>
+              <button type="submit">Submit</button>
+              <?php if (userCheckedDiv($userId)== 'true') : ?>
+                  <div style="margin-right: 0px;">
+                      <p>Secret Key:</p>
+                      <?php echo getSecretKey($userId); ?></p>
+                  </div>
+              <?php endif; ?>
+          </form>
+
+
+
+
+      </section>
 
 
 
