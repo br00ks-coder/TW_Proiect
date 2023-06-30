@@ -60,13 +60,16 @@
                 <li class="about_us">About</li>
             </a>
             <a href="../check.php">
-                <li class="check_flowers">Check Flowers</li>
+                <li class="check_flowers">Warehouse</li>
             </a>
             <a href="../buy.php">
                 <li class="buy_flowers">Shop</li>
             </a>
             <a href="../humidify.php">
-                <li class="humidify">Humidify</li>
+                <li class="humidify">Garden</li>
+            </a>
+            <a href="../checkout.php" >
+                <li class="contact_button">Checkout</li>
             </a>
             <a href="../contact.php">
                 <li class="contact_button">Contact</li>
@@ -74,6 +77,7 @@
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>
+
         </ul>
              <?php else: ?>
 
@@ -90,6 +94,9 @@
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>
+                <a href="../checkout.php" >
+                    <li class="contact_button">Checkout</li>
+                </a>
         </ul>
 
              <?php endif; ?>
@@ -108,14 +115,18 @@
                 <li class="about_us">About Us</li>
             </a>
             <a href="../check.php">
-                <li class="check_flowers">Check Flowers</li>
+                <li class="check_flowers">Garden</li>
             </a>
             <a href="../buy.php">
                 <li class="buy_flowers">Buy Flowers</li>
             </a>
+            <a href="../checkout.php" >
+                <li class="contact_button">Checkout</li>
+            </a>
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>
+
             <a href="#footer">
                 <li class="contact_button">Contact Us</li>
             </a>

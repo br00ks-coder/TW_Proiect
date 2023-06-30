@@ -241,6 +241,17 @@ background-position: center;
   background: transparent;
   border: none;
 }
+
+#checkout{
+  margin-top: 5%;
+}
+#checkout-form{
+  left: 0;
+}
+.no-style-form{
+  left: 0%;
+  box-shadow: none;
+}
 #background {
 
   top: 0;
@@ -269,6 +280,5 @@ background-position: center;
 }
 
 }
-
 
 

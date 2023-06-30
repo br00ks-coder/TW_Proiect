@@ -21,7 +21,17 @@ main {
     gap: 40px;
     justify-content: space-evenly;
 }
+#add-flowers{
 
+    position: relative;
+    left: 0%;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .flower {
     border: 2px solid  hsl(220, 17%, 27%);;
     border-radius: 10px;
