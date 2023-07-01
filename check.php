@@ -61,11 +61,28 @@ if($validationResult==0)
 
     </section>
         <section >
-
+            <script>
+                function setFlowerImages() {
+                    var nameInput = document.getElementById("name");
+                    var flowerImagesInput = document.getElementById("flower_images");
+                    flowerImagesInput.value = nameInput.value;
+                }
+            </script>
             <form id="add-flowers" method="POST" action="php/add.php">
                 <h2>Add Flower</h2>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <select id="name" name="name" required>
+                    <option value="rosee">Rose</option>
+                    <option value="tulip">Tulip</option>
+                    <option value="lily">Lily</option>
+                    <option value="orchid">Orchid</option>
+                    <option value="daisy">Daisy</option>
+                    <option value="carnation">Carnation</option>
+                    <option value="daffodil">Daffodil</option>
+                    <option value="hydrangea">Hydrangea</option>
+                    <option value="peony">Peony</option>
+                </select>
+
 
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" required></textarea>
@@ -86,10 +103,10 @@ if($validationResult==0)
                 <label for="userId"></label>
                 <input style="display: none;" name="userId" id="userId" value="<?php echo $userId?>">
 
-                <label for="flower_images">Flower Images:</label>
-                <input type="text" id="flower_images" name="flower_images" required>
+                <input type="text" id="flower_images" name="flower_images" style="display: none;">
 
-                <input type="submit" value="Add Flower">
+
+                <input type="submit" value="Add Flower" onclick="setFlowerImages()">
             </form>
         </section>
 </main>
