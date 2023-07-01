@@ -193,9 +193,7 @@ background-position: center;
 }
 
 
-.show-cart li {
-  display: flex;
-}
+
 .card {
   margin-bottom: 20px;
 }
@@ -204,7 +202,11 @@ background-position: center;
   height: 200px;
   align-self: center;
 }
+.show-cart li {
+  display: flex;
+}
 #cart-window {
+
   display: none;
   position: fixed;
   top: 50px; /* Adjust the top position to accommodate the dropdown */
@@ -212,7 +214,7 @@ background-position: center;
   width: auto; /* Remove fixed width */
   max-height: 300px; /* Set a maximum height to limit the dropdown's size */
   overflow-y: auto; /* Add vertical scrolling if necessary */
-  background-color: #1b4d3e;
+  background-color: #405e55;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -239,18 +241,34 @@ background-position: center;
 
 
 }
+#fav-window {
+  display: flex;
 
-#cart-window li {
+  position: fixed;
+  top: 50px; /* Adjust the top position to accommodate the dropdown */
+  right: 10%; /* Adjust the right position to align it properly */
+  width: auto; /* Remove fixed width */
+  max-height: 300px; /* Set a maximum height to limit the dropdown's size */
+  overflow-y: auto; /* Add vertical scrolling if necessary */
+  background-color: #405e55;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transform: none; /* Changing the position */
+  transition: none;
+}
+#fav-window li {
   margin-bottom: 10px;
 }
 
-#cart-window p {
+#fav-window p {
   text-align: right;
   margin-top: 20px;
   color: #ffffff;
 }
 
-#cart-window  p:hover{
+#fav-window  p:hover{
   color: #ffffff;
 }
 .quantity-btn {
@@ -260,6 +278,28 @@ background-position: center;
   background: transparent;
   border: none;
 }
+#fav-window h2 {
+  margin-top: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+#fav-window ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#fav-items > li:hover {
+
+  color: #ffffff;
+  transform: none; /* Changing the position */
+  transition: none;
+
+
+}
+
+
+
 
 #checkout{
   margin-top: 5%;

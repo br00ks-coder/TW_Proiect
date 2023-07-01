@@ -11,6 +11,9 @@ if($validationResult==0)
     header("Location: index.php");
 }
 
+
+
+
 ?>
 
 <!DOCTYPE html>

@@ -9,10 +9,14 @@ $secretKey = 'your-secret-key'; // Replace with your own secret key
 require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
+
 if($validationResult==0)
 {
     header("Location: index.php");
 }
+
+
+
 ?>
 
 <!DOCTYPE html>

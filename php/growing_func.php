@@ -38,6 +38,8 @@ while ($row = pg_fetch_assoc($result)) {
 // Check if the flower is already followed
     $checkQuery = "SELECT * FROM follow WHERE client_id = $clientId AND seller_id = $sellerId AND flower_name = '$flowerName'";
     $checkResult = pg_query($dbconn, $checkQuery);
+    if (verifyJwtToken($jwtToken, $secretKey)) {
+
 
     if (pg_num_rows($checkResult) > 0) {
         // Flower is already followed
@@ -46,7 +48,7 @@ while ($row = pg_fetch_assoc($result)) {
         // Flower is not followed
         echo '<button id="heart-button" onclick="followFlower(' . $clientId . ', ' . $sellerId . ', \'' . $flowerName . '\')">Follow</button>';
     }
-
+    }
     echo '</div>';
 
 
