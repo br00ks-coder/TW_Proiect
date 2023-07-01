@@ -18,9 +18,10 @@ class FlowerModel extends PDOConn
      */
     public function addFlower($flowerData): PDOStatement
     {
-        $query = "INSERT INTO flowers
-              (name, description, price, available_quantity, created_at, difficulty, flower_images)
-              VALUES (:name, :description, :price, :available_quantity, CURRENT_TIMESTAMP, :difficulty, NULL)";
+        $query = "INSERT INTO my_flowers
+              (name, description, price, available_quantity, created_at, difficulty, flower_images, user_id)
+              VALUES (:name, :description, :price, :available_quantity, CURRENT_TIMESTAMP, :difficulty,
+                      :flower_image, :user_id)";
 
         return $this->executeStatement($query, $flowerData);
     }

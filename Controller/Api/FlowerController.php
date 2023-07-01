@@ -61,13 +61,17 @@ class FlowerController extends BaseController
                     isset($arrRequestBody['description']) &&
                     isset($arrRequestBody['price']) &&
                     isset($arrRequestBody['available_quantity']) &&
-                    isset($arrRequestBody['difficulty'])) {
-                    $flowerData = [
-                        'name' => $arrRequestBody['name'],
+                    isset($arrRequestBody['difficulty']) &&
+                    isset($arrRequestBody['flower_images']) &&
+                    isset($arrRequestBody['user_id'])) {
+
+                    $flowerData = ['name' => $arrRequestBody['name'],
                         'description' => $arrRequestBody['description'],
                         'price' => $arrRequestBody['price'],
                         'available_quantity' => $arrRequestBody['available_quantity'],
-                        'difficulty' => $arrRequestBody['difficulty']
+                        'difficulty' => $arrRequestBody['difficulty'],
+                        'flower_images' => $arrRequestBody['flower_images'],
+                        'user_id' => $arrRequestBody['user_id']
                     ];
 
                     $flowerModel->addFlower($flowerData);

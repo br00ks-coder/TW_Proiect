@@ -77,6 +77,8 @@ if ($validationResult == 0) {
                     price: document.getElementById("price").value,
                     available_quantity: document.getElementById("available_quantity").value,
                     difficulty: document.getElementById("difficulty").value
+                    flower_images: flowerImagesInput.value,
+                    user_id: document.getElementById("userId").value
                 };
 
                 // Set up the request
