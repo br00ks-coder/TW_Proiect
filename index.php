@@ -6,32 +6,33 @@ session_start();
 
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-$local_id = getUserFromJwt($jwtToken,$secretKey)['user_id'];
-$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
+$local_id = getUserFromJwt($jwtToken, $secretKey)['user_id'];
+$db_connection = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com
+ port=5432 dbname=webgardening user=postgres password=paroladb");
 $query = "SELECT  available_quantity, humidity, user_id FROM flowers_humidity WHERE user_id = $local_id ";
-$result = pg_query($dbconn, $query);
+$result = pg_query($db_connection, $query);
 $humAverage = 0;
 $flowerCount = 0;
 $flowerStock = 0;
-if($result){
-while ($row = pg_fetch_assoc($result)){
+if ($result) {
+    while ($row = pg_fetch_assoc($result)) {
 
-    $flowerAvailableQ = $row['available_quantity'];
-    $flowerStock = $flowerStock + $flowerAvailableQ;
+        $flowerAvailableQ = $row['available_quantity'];
+        $flowerStock = $flowerStock + $flowerAvailableQ;
 
-    $flowerHumidity = $row['humidity'];
-    $humAverage = $humAverage + $flowerHumidity;
-    $flowerCount++;
+        $flowerHumidity = $row['humidity'];
+        $humAverage = $humAverage + $flowerHumidity;
+        $flowerCount++;
+    }
 }
-}
-if($flowerCount == 0){
+if ($flowerCount == 0) {
 
     $humAverage = 0;
-}else{
-    $humAverage = $humAverage /$flowerCount;
+} else {
+    $humAverage = $humAverage / $flowerCount;
 }
 ?>
 
@@ -51,7 +52,6 @@ if($flowerCount == 0){
     <title>Web Gardening</title>
 </head>
 <body>
-<!-- Image for background -->
 
 <!-- Declared here to load as fast as possible -->
 
@@ -60,82 +60,94 @@ if($flowerCount == 0){
 <main id="main">
 
     <section class="section1">
-        <div class="section1 text" id="About_us"> <span>
+        <div class="section1 text" id="About_us">
             <h2>Welcome!</h2>
             <p>
-              We created this site to help the people who love flowers be more in touch with them.
-                 As a seller or a buyer, our site puts technology to use so that you can check the status of the flowers that you love!
+                We created this site to help the people who love flowers be more in touch with them.
+                As a seller or a buyer, our site puts technology
+                to use so that you can check the status of the flowers that you love!
 
             </p>
-          </span></div>
-        <div class="section1 image" id="Photo_1"><img src="resources/flori.jpg" alt="Flower greenhouse"/></div>
+        </div>
+
+        <div class="section1 image" id="Photo_1">
+            <img src="resources/flori.jpg" alt="Flower greenhouse"/>
+        </div>
     </section>
     <br/>
     <section class="section2">
-        <div class="section2 image" id="Photo_2"><img src="resources/ghiveci.jpg" alt="FlowerShop"/></div>
-        <div class="section2 text" id="Our_flowers"> <span>
+        <div class="section2 image" id="Photo_2">
+            <img src="resources/ghiveci.jpg" alt="FlowerShop"/>
+        </div>
+
+        <div class="section2 text" id="Our_flowers">
             <h2>Your flowers...</h2>
             <p>
                 will thank you!
-                 It was never easier to be able to sell your the flowers you grow.
-                 With the help of our website and some sensors you will be able to monitor the status of your flowers.
-                 You can do it anytime, anywhere.
+                It was never easier to be able to sell your the flowers you grow.
+                With the help of our website and some sensors you will be able to monitor the status of your
+                flowers.
+                You can do it anytime, anywhere.
             </p>
-          </span></div>
+        </div>
     </section>
+
     <br/>
+
     <section>
-        <div class="section3 text" id="Stats_text"> <span>
+        <div class="section3 text" id="Stats_text">
             <h2>With our latest technologies</h2>
             <p>
-              We are able to provide different analyses through some sensors you have to put inside your flower's pot.
-                 Those sensors are able to read the humidity of the air, of the soil, the temperature and will let you know
-                 when you should water your flowers again.
+                We are able to provide different analyses through some sensors you have to put inside your flower's pot.
+                Those sensors are able to read the humidity of the air, of the soil, the temperature and will let you
+                know
+                when you should water your flowers again.
             </p>
-          </span></div>
+        </div>
+
         <?php if ($validationResult): ?>
-        <div class="section3 stats" id="Stats_progress_bar"> <span>
+        <div class="section3 stats" id="Stats_progress_bar">
             <p>The humidity level in ground</p>
             <div class="progress_bar" style="width:100%">
-              <div class="progress_bar_fill" style="width: 80%">
-              <?php echo $humAverage ?>% </div>
+                <div class="progress_bar_fill" style="width: 80%"><?php echo $humAverage ?>%</div>
             </div>
+
             <p>Your total number of flowers</p>
+
             <div class="progress_bar" style="width: 100%">
-              <div class="progress_bar_fill" style="width: 60%">
-              <?php echo $flowerStock ?>  </div>
+                <div class="progress_bar_fill" style="width: 60%"><?php echo $flowerStock ?></div>
             </div>
-                <?php else: ?>
-                    <div class="section3 text" id="Stats_text"> <span>
-                            <p>Please login or register in order to see more of our features!
-                            </p>
-                        </span></div>
-             <?php endif; ?>
+            <?php else: ?>
+                <div class="section3 text" id="Stats_text">
+                    <p>Please login or register in order to see more of our features!</p>
+                </div>
+            <?php endif; ?>
 
             <br/>
-          </span></div>
+        </div>
     </section>
+
     <br/>
+
     <section>
-        <div class="section4 text" id="%Ready_text"> <span>
+        <div class="section4 text" id="%Ready_text">
             <h2>How much is left?</h2>
             <p>
-              Based on a series of calculations we are able to provide an estimate time of when the
-                 flowers you follow are ready! We check the weather, the humidity in soil and air
-                 and the approximate time of growth for the respective species of flower.
-                 Also, you can opt to receive an email when the flowers are ready to be bought!
+                Based on a series of calculations we are able to provide an estimate time of when the
+                flowers you follow are ready! We check the weather, the humidity in soil and air
+                and the approximate time of growth for the respective species of flower.
+                Also, you can opt to receive an email when the flowers are ready to be bought!
             </p>
-          </span></div>
-        <div class="section4 text" id="%Ready_diagram"> <span>
+        </div>
+        <div class="section4 text" id="%Ready_diagram">
             <h1>30 Days left</h1>
             <h3>Ready on 30th April 2023</h3>
             <p>Save the date</p>
-          </span></div>
+        </div>
     </section>
 </main>
-<?php
-include_once './view/Footer.php';
-?>
+
+<?php include_once './view/Footer.php'; ?>
 </body>
 
 <script>

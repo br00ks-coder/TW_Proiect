@@ -21,29 +21,26 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-}
-.section1, .section2{
-
 
 }
+
 section > div {
 
-    width: 100%;
+    width: 30%;
     height: 100%;
     display: flex;
-    text-align: center  ;
+    text-align: center;
     color: white;
     justify-content: center;
 }
 
-section1 > div > span {
+.section1 > div  {
     min-height: 350px;
     max-height: fit-content;
     width: 90%;
     border-radius: 20px;
     text-align: right;
     display: flex;
-    flex-flow: column;
     align-items: center;
     justify-content: center;
 }
@@ -52,13 +49,15 @@ section1 > div > span {
 
 section > .text {
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 section > .image > img {
     border-radius: 45px;
     padding: 40px;
     height: 450px;
-    width: fit-content;
 
 }
 
@@ -83,7 +82,7 @@ section > .image > img {
 }
 
 
-.section3 > span {
+.section3 {
     padding-left: 1%;
     padding-right: 1%;
 }
@@ -110,7 +109,7 @@ section > .image > img {
     top: 50px; /* Adjust the top position to accommodate the dropdown */
     right: 10px; /* Adjust the right position to align it properly */
     width: auto; /* Remove fixed width */
-    max-height: 300px; /* Set a maximum height to limit the dropdown's size */
+    max-height: 300px; /* Set a maximum height to limit the dropdowns size */
     overflow-y: auto; /* Add vertical scrolling if necessary */
     background-color: #1b4d3e;
     padding: 20px;
@@ -177,20 +176,17 @@ section > .image > img {
     background-size: cover;
 
     z-index: -1;
+}
 
 @keyframes {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
+
     100% {
-
-        background-position: 0% 50%;
-
+        background-position: 0 50%;
     }
-
-}
-
 }

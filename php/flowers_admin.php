@@ -36,20 +36,20 @@ function generateDivs($flowers) {
 
 // Function to delete a flower by ID
 function deleteFlower($flowerId) {
-    global $dbconn;
+    global $db_connection;
 
     // Delete the flower from the database
     $query = "DELETE FROM flowers WHERE id = $flowerId";
-    pg_query($dbconn, $query);
+    pg_query($db_connection, $query);
 }
 
 // Function to update the available quantity of a flower
 function updateQuantity($flowerId, $newQuantity) {
-    global $dbconn;
+    global $db_connection;
 
     // Update the available quantity in the database
     $query = "UPDATE flowers SET available_quantity = $newQuantity WHERE id = $flowerId";
-    pg_query($dbconn, $query);
+    pg_query($db_connection, $query);
 }
 
 // Handle delete and update actions
