@@ -110,9 +110,6 @@
             <a href="../index.php#main">
                 <li class="about_us">About Us</li>
             </a>
-            <a href="../check.php">
-                <li class="check_flowers">Garden</li>
-            </a>
             <a href="../buy.php">
                 <li class="buy_flowers">Buy Flowers</li>
             </a>

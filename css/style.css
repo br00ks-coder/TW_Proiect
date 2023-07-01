@@ -141,6 +141,7 @@ height: 50px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: fit-content;
 }
 
 #profileForm input[type="text"],

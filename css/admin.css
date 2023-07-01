@@ -18,21 +18,58 @@
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
 }
 form {
     left: 50%;
     width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+form label {
+    color: #ffffff;
+}
+button[type="submit"] {
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    color: #fe8a01;
+
+}
+
+input[type="submit"] {
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    color: #fe8a01;
+
+}
+.flower-name-admin {
+    color: #ffffff;
 }
 .form-group {
     margin-bottom: 20px;
 }
+#delete-user-form p {
+    margin-bottom: 5px;
+    color: #ffffff;
 
+}
 #background {
 
     top: 0;
