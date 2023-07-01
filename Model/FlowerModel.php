@@ -21,7 +21,7 @@ class FlowerModel extends PDOConn
         $query = "INSERT INTO my_flowers
               (name, description, price, available_quantity, created_at, difficulty, flower_images, user_id)
               VALUES (:name, :description, :price, :available_quantity, CURRENT_TIMESTAMP, :difficulty,
-                      :flower_image, :user_id)";
+                      :flower_images, :user_id)";
 
         return $this->executeStatement($query, $flowerData);
     }
