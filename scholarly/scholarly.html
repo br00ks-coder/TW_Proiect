@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="scholarly.css">
+    <title style="text-align: center;
+                  margin-top: 30px;">Scholarly Web Gardening</title>
+
+</head>
+
+<body>
+
+
+<h1>Introduction:</h1>
+
+<h2>1.1 Purpose:</h2>
+<p>Platforma noastra web ofera servicii de home-gardening si disponibilitatea de a vinde/cumpara materia prima pentru a putea practica acest hobby; florile.
+   Produsul este destinat persoanelor interesate de gradinarit de acasa ce nu detin multa experienta in domeniu dar doresc sa inceapa in acest domeniu. </p>
+
+<h2>1.2 Document Conventions:</h2>
+<p>Throughout this document, certain conventions are followed to ensure clarity and consistency. These conventions include using standard language, providing descriptive headings, utilizing lists and tables for organization, and incorporating appropriate formatting.
+   In elaborarea acestui proiect au fost respectate mai multe conventii pentru a respecta claritatea si consistenta proiectului. Am folosit pentru partea de FrontEnd limbajele: HTML si CSS,
+   iar in partea de backend a fost acoperita de limbajele: PHP si JavaScript.
+   De asemenea am ales sa respectam acelasi design minimalist pentru butoane cu acelasi efect de hover, cum se poate observa in imaginea de mai jos.
+
+</p>
+<img src="../resources/scho1.JPG">
+<figcaption>Img.1 - Codul de design al butoanelor.</figcaption>
+
+<h2>1.3 Intended Audience and Reading Suggestions:</h2>
+<p>Acest document este dezvoltatorilor de produse software ce doresc sa alfe mai multe detalii despre implementarea produsului nostru.
+    Documentul nostru este organizat in 4 capitole principale: </p>
+
+<li> Introduction: O scurta introducere a produsului</li>
+ <li>   Overall Description: Detalierea scopului produsului si a target-ului sau </li>
+ <li>   System Features: Prezentarea functionalitatilor si a performantei </li>
+  <li>  Other Nonfunctional Requirements: Analiza produsului in functie de cerinte </li>
+
+
+<h2>1.4 Product Scope:</h2>
+<p>Site-ul Web Gardening ofera optiuni multiple ce pot satisface cerinta gradinarilor.
+    Ofera o interfata usoara cu grafice ce ofera informatii despre plantele ce sunt indexate in baza noastra de date.
+    De asemenea, platforma vine cu un sistem de vanzare/cumparare bine definit si cu un sistem de favorite unde utilizatorii pot urmari plantele ce ii intereseaza pe viitor.
+    O alta functionalitate de baza este elementul de gradina proprie in interiorul site ului, unde utilizatoriu isi poate vedea recolta, o poate uda sau o poate recolta pentru a fi adaugata in depozitul acestuia.
+</p>
+
+<h2>1.5 References:</h2>
+    <p>O referinta importanta pentru proiect este diagrama Use-Case, prezenta in imaginea de mai jos.
+
+</p>
+<img src="../resources/use-case-diagram.jpeg">
+<figcaption>Img.2 - Diagrama Use-Case a site-ului.</figcaption>
+
+<h1>Overall Description:</h1>
+
+<h2>2.1 Product Perspective:</h2>
+<p>The web gardening website is designed as a standalone platform that operates independently of other systems.
+    It provides a comprehensive and user-friendly interface for accessing gardening-related information and tools.
+    Website-ul nostru tintese a fi o platforma standalone, independetna de orice alt sistem, ce vine ca un deschizator de piata pentru zona locala.
+    Componentele principale ale proiectului pot fi observate in diagrama de mai jos:
+    </p>
+<img src="../resources/c4_diagram.jpeg">
+<figcaption>Img.3 - Diagrama C4 a site-ului.</figcaption>
+
+<h2>2.2 Product Functions:</h2>
+<p>The key functions of the web gardening website include:</p>
+<ul>
+    <li>Permite utilizatorului sa vanda flori.</li>
+    <li>Permite utilizatorului sa cumpere flori.</li>
+    <li>Permite utilizatorului sa isi planteze si intretina florile din propria gradina.</li>
+    <li>Permite utilizatorului sa urmareasca florile ce doreste sa le achizitioneze.</li>
+    <li>Permite administratorului sa manevreze baza de date a florilor, sa schimbe parola user-ilor.</li>
+    <li>Permite administratorului sa exporte baza de date in format JSON.</li>
+</ul>
+
+<h2>2.3 User Classes and Characteristics:</h2>
+<p>The web gardening website caters to the following user classes:</p>
+<ol>
+    <li>Gradinari Novici: Utilizatorii novici vor avea parte de o interfata usoara de unde isi pot practica hobby-ul si administra recolta.</li>
+    <li>Experienced Gardeners: Utilizatorii avanstati vor putea cumpara noi tipuri de flori. De asemenea acestia vor putea sa isi vanda florile ce le detin.</li>
+    <li>Designeri de Peisaj: Profesionistii vor avea acces la o gama larga de flori de unde vor pute alege.Acestia vor avea capacitatea de a-si putea planta singuri flori, pentru a le folosi mai tarziu in aranjamente.</li>
+</ol>
+
+<h2>2.4 Operating Environment:</h2>
+<p>Platforma poate opera pe multiple versiuni de OS, independent de acestea si va putea fi accesata de pe orice dispozitiv conectat la internet.
+   Aceste functionalitati sunt posibile datorita integrarii platformei si a bazei de date intr-un virtual machine ce ruleaza Ubuntu.Aceasta masina opereaza din interiorul unui server AWS.
+</p>
+<li>Versiunea PHP instalata pe masina virtuala este: 8.1.2 </li>
+<li>Versiunea de Ubuntu instalata pe serverul de Apache este: Ubuntu 22.04.2 LTS</li>
+<li>Versiunea Web Server-ului Apache este: Apache/2.4.52 </li>
+<li>Versiunea bazei de date PostgreSql este: 14.6 </li>
+<li>Au fost folosite stylesheet-uri pentru anumite butoane si iconite.Pe acestea se aplica un script de pe FontAwesome de unde isi iau imaginea. </li>
+
+<img src="../resources/button-fontawes1.JPG">
+<figcaption>Img.4 - Crearea butonului ce va avea stylesheet.</figcaption>
+
+<img src="../resources/script-icons.JPG">
+<figcaption>Img.5 - Scriptul ce importa imaginea butonului.</figcaption>
+
+
+<h2>2.5 Design and Implementation Constraints:</h2>
+<p>Limitarile de design si construire ale proiectului au fost urmatoarele:</p>
+<li>Nu se permite utilizarea de framework-uri la nivel de client (front-end) şi/sau server (back-end) Web</li>
+<li>Architectura aplicaţiei Web realizate va fi obligatoriu bazată pe servicii Web. </li>
+<li>Invocarea unui serviciu/API Web va fi efectuată în manieră asincronă via suita de tehnologii Ajax.</li>
+<li>Adoptarea principiilor designului Web responsiv.</li>
+<li>Import/export de date folosind formate deschise – minim, CSV (Comma Separated Values) şi JSON (JavaScript Object Notation).</li>
+<li>Existenţa unui modul propriu de administrare a aplicaţiei Web.</li>
+<ul>
+
+</ul>
+
+<h2>2.6 User Documentation:</h2>
+<p>Website-ul contine o pagina de "Get Help" unde sunt listate categoriile principale de care un utilizator nou ar putea fi interesat.
+   In cazul in care utilizatorul nu gaseste informatia pe care o cauta in pagina de Get Help,
+    site-ul detine o pagina de Contact Us unde utilizatorul ne poate trimite un mesaj cu problema. </p>
+<img src="../resources/scho-instr.JPG">
+<figcaption>Img.6 - Pagina Get Help cu primele instructiuni de logare.</figcaption>
+
+
+<h2>2.7 Assumptions and Dependencies:</h2>
+<p>
+    Intrucat website-ul nostru este independent de alte produse sau servicii software, functionarea lui depinde de stabilitatea masinii virtuale Ubuntu pe care acesta este incarcat.
+    De asemenea, pe viitor, daca se doreste o mai buna implementare a unei formule de detectare a evolutiei plantei, se poate considera integrarea unui API ce pune la dispozitie temperatura exterioara.
+    De asemenea site-ul depinde si de buna functionare a bazei de date, a update-ului ei constant si intretinerii.
+</p>
+
+<h1>External Interface Requirements:</h1>
+
+<h2>3.1 User Interfaces:</h2>
+<p>Caracteristicile logice ale interfetelor noastre urmeaza un pattern bine stabilit pe care user-ul trebuie sa-l respecte daca doreste sa aiba acces la toate facilitatile site-ului</p>
+<p>Logica produsului nostru se bazeaza pe o interogare de baza ce sta la baza disponibilitatii paginilor noastre.
+   Daca user-ul nu este logat acesta are acces doar la sectiunile urmatoare: pagina principala, pagina de login, pagina de register, pagina de get help, pagina de contact us si pagina de buy flowers.
+   Pagina de buy flowers este vizibala pentru ca utilizatorul sa poate vedea florile puse la vanzare, le poate adauga in cosul de cumparaturi dar acesta nu este disponibil intrucat nu detine un cont
+</p>
+<p>Logarea se bazaseaza pe un token generat la fiecare login. Token se sterge la logout iar unul nou va fi creat si salvat in cookie la login.</p>
+<img src="../resources/token-gen-scholary.JPG">
+<figcaption>Img.7 - Functia de generare a unui token nou in momentul login-ului.</figcaption>
+
+<p>Disponibilitatea paginilor in functie de login-ul utilizatorului se realizeaza printr-un script de verificare la inceputul paginii. Daca token-ul exista pagina este disponibila, daca nu, se face trimiterea automata catre pagina principala.</p>
+<img src="../resources/verify-token-sch.JPG">
+<figcaption>Img.8 - Verificarea starii de autentificare a utiliazatorului cu scopul de a face pagina vizibila sau nu.</figcaption>
+
+
+<p>In momentul in care un utilizator se inregistreaza, un nou cont este adaugat in baza de date iar acesta se poate loga.
+   Pentru fiecare cont inregistrat exista o coloana in baza de date numita fa_active ce ii permite utilizatorului sa isi seteze two factor authenticator. </p>
+
+<img src="../resources/register-sch.JPG">
+<figcaption>Img.9 - Verificarea daca un cont este deja prezent in baza de date. Daca nu, acesta este adaugat. Id-ul se creaza automat.</figcaption>
+
+<p>In momentul verificarii two factor authenticater-ului, functia verifyCode() verifica validatiea secret-key-ului asociat contului. Daca aceasta este valida, din ea se va
+   genera un cod de 6 cifre. Daca input-ul utilizatorului este egal cu codul generat, check-ul este valid si utilizatorul se logheaza. </p>
+<img src="../resources/2fa-sch.JPG">
+<figcaption>Img.10 - Functia de verificare a secret-key-ului si functia de generare a codului 2FA.</figcaption>
+
+<p>Un utilizator logat are acces la urmatoarele functionalitati:</p>
+<li>Buy Flowers</li>
+    <p>Pagina prezinta 2 aspecte generale: sectiunea de flori la vanzare si o sectiune unde sunt disponibile florile ce sunt in crestere la ceilalti useri
+       Acesta poate adauga flori in cart, poate scoate flori din cart si poate sa finalizeze o comanda in sectiunea checkout.
+       Sectiunea de cumparare este strans in legatura cu listele cart si follow ce sunt prezente in dreapta sun a paginii.
+    </p>
+
+    <img>
+
+
+<li>Sell Flowers</li>
+    <p>Aceasta functionalitate se gaseste in pagina Warehouse unde utilizatorul isi poate vedea florile detinute. Acestea pot fi puse la vanzare prin apasarea butonului buy.
+       In momentul apasari, florile vor fi considerate scoase la vanzare si vor fi prezente in sectiunea de buy. </p>
+    <img src="../resources/sell-sch.JPG">
+    <figcapture>Img.12 - Functia ce verifica apasarea butonul sell si adaugarea florii in tabela de flori puse la vanzare</figcapture>
+
+<li>Follow Flowers</li>
+    <p>In pagina de Shop, utilizatorul poate vedea florile ce sunt in crestere la alti useri si le poate adauga la favorite. Acestea vor fi vizibile in lista de favorite.</p>
+
+    <img src="../resources/follow-sch.JPG">
+    <figcaption>Img.13 - Functia ce verifica daca floare se afla deja la favorite, daca nu, este adaugata si afisata in lista de favorite.</figcaption>
+
+
+<li>Check My Flowers</li>
+    <p>Utilizatorul isi poate verifica florile detinute. De asemenea, acesta poate sa le ude, in functie de umiditatea afisata. 
+        Fiecare floare are umiditate proprie. Aceasta umiditate scade dupa o formula definita.</p>
+    <img src="../resources/hum-sch.JPG">
+    <figcaption>Img.14 - Functia de udare a plantei</figcaption>
+
+    <img src="../resources/buy-fl-sch.JPG">
+    <figcaption>Img.15 - Interfata de unde poti cumpara flori.</figcaption>
+
+
+
+<h2>3.2 Hardware Interfaces:</h2>
+<p>Platforma functioneaza independent, pe o configuratie hardware standard, si nu are nevoie de instrumente hardware de specialitate pentru a rula.</p>
+
+<h2>3.3 Software Interfaces:</h2>
+<p>Website-ul prezinta un API independent creat, ce realizeaza conexiunea la baza de date si se ocupa cu fetch-ul de date din aceasta. API-ul actioneaza ca un controller
+   pentru interogarile ce se executa.</p>
+
+    <img src="../resources/api-func-sch.JPG">
+    <figcaption>Img.16 - Functia din API ce creaza un request de tipul GET si preia din baza de date informatii, transformandu-le in format JSON.</figcaption>
+
+<p>De asemenea, platforma realizeaza si conexiuni directe la baza de date, luandu-si informatii in functie de interogarile specificate.</p>
+
+<img src="../resources/conex-db-sch.JPG">
+<figcaption>Img.17 - Conexiune si fetch de date rudimentar cu baza de date.</figcaption>
+
+<h1>Creators</h1>
+<p> The creators of this website are: </p>
+<li>Alexandru Balan: 2FA, Login BK&FW, Register BK&FW, DevOps, Contact FW, Header, Footer, Bugs</li>
+<li>Mihail Filimon: FrontEnd Styling, API, Warehouse FW&BK, Garden Bk, Header, Footer, Bugs</li>
+<li>Catalin Curlea: FrontEnd Styling, Cart FW, Buy BK&FW, Garden FW, Get Help, Header, Footer, Bugs </li>
+
+<p>Nota: Acesta a fost un proiect de echipa. Fiecare functionalitate de FrontEnd si BackEnd a fost construita in colaborare cu toti membrii echipei.</p>
+</body>
+
+</html>
