@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/css/GeneralStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/GeneralStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/buy_func.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/buy_func.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/export.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/export.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/growing_func.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/growing_func.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/Header.php" afterDir="false" />
     </list>
@@ -64,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688166506401</updated>
-      <workItem from="1688166511003" duration="3154000" />
+      <workItem from="1688166511003" duration="3988000" />
     </task>
     <servers />
   </component>

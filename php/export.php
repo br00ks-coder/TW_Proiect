@@ -3,23 +3,26 @@ $dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws
 
 if (isset($_POST['export'])) {
     // Retrieve the data from the users table
-    $usersQuery = "SELECT id, username, password, is_admin FROM users";
+    $usersQuery = "SELECT * FROM users";
     $usersResult = pg_query($dbconn, $usersQuery);
 
     // Retrieve the data from the flowers table
-    $flowersQuery = "SELECT id, name, description,price,difficulty,created_at,available_quantity FROM flowers";
+    $flowersQuery = "SELECT * FROM flowers";
     $flowersResult = pg_query($dbconn, $flowersQuery);
 
-    $messageQuerry = "SELECT id, name, email,message,created_at FROM contact_messages";
+    $messageQuerry = "SELECT * FROM contact_messages";
     $messageResult = pg_query($dbconn, $messageQuerry);
 
-    $harvestsQuerry = "SELECT har_name,date_planted,harvest_date,har_id FROM my_harvests";
+    $harvestsQuerry = "SELECT * FROM my_flowers";
     $harvestsResult = pg_query($dbconn, $harvestsQuerry);
 
-    $humQuerry = "SELECT id,humidity from flowers_humidity";
+    $humQuerry = "SELECT * from flowers_humidity";
     $humResult = pg_query($dbconn,$humQuerry);
 
-    if ($usersResult && $flowersResult && $messageResult && $harvestsResult && $humResult) {
+    $orderQuerry = "SELECT * from orders";
+    $orderResult = pg_query($dbconn,$orderQuerry);
+
+    if ($usersResult && $flowersResult && $messageResult && $harvestsResult && $humResult && $orderResult) {
         $data = array();
 
         // Fetch data from the users table and store in the $data array
@@ -42,6 +45,12 @@ if (isset($_POST['export'])) {
         while ($row = pg_fetch_assoc($humResult)) {
             $data['humidity'][] = $row;
         }
+
+        while ($row = pg_fetch_assoc($orderResult)) {
+            $data['order'][] = $row;
+        }
+
+
         // Generate the JSON file
         $jsonString = json_encode($data, JSON_PRETTY_PRINT);
 
