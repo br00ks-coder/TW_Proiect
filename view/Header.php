@@ -94,6 +94,12 @@
              <?php else: ?>
 
         <ul>
+            <a href="../login.php">
+                <li class="log_in">Log In</li>
+            </a>
+            <a href="../register.php">
+                <li class="register">Register</li>
+            </a>
 
             <a href="../about.php">
                 <li class="about_us">About</li>
@@ -141,13 +147,14 @@
                         <li class="logout">Log out</li>
                     </a>
 
+                    
+
                         <li id="fav-window" style="display: none;">
                             <h2>Favorites</h2>
                             <ul id="fav-items">
                             </ul>
                         </li>
                         <button id="cart_button" onclick="location.href = '../buy.php';"><i class="fa-solid fa-heart"></i></button>
-
 
                         <li id="cart-window" style="display: none;">
                             <h2>Cart</h2>
@@ -162,6 +169,12 @@
             <?php else: ?>
 
                 <ul>
+                    <a href="../login.php">
+                        <li class="log_in">Log In</li>
+                    </a>
+                    <a href="../register.php">
+                        <li class="register">Register</li>
+                    </a>
 
                     <a href="../about.php">
                         <li class="about_us">About</li>
