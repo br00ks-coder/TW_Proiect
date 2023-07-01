@@ -9,7 +9,6 @@ main {
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: none;
 }
 
 .flower_harvest {
@@ -23,7 +22,7 @@ main {
 }
 
 .flower_harvest {
-    border: 2px solid  hsl(220, 17%, 27%);;
+    border: 2px solid  hsl(220, 17%, 27%);
     border-radius: 10px;
     background: white;
     display: flex;
@@ -56,7 +55,6 @@ main {
     font-size: 14px;
     text-align: center;
 }
-
 
 
 @media only screen and (max-width: 576px) {

@@ -63,8 +63,8 @@ if($validationResult==0)
         <section >
             <script>
                 function setFlowerImages() {
-                    var nameInput = document.getElementById("name");
-                    var flowerImagesInput = document.getElementById("flower_images");
+                    let nameInput = document.getElementById("name");
+                    let flowerImagesInput = document.getElementById("flower_images");
                     flowerImagesInput.value = nameInput.value;
                 }
             </script>
@@ -103,6 +103,7 @@ if($validationResult==0)
                 <label for="userId"></label>
                 <input style="display: none;" name="userId" id="userId" value="<?php echo $userId?>">
 
+                <label for="flower_images"></label>
                 <input type="text" id="flower_images" name="flower_images" style="display: none;">
 
 
