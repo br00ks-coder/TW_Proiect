@@ -2,7 +2,7 @@
 session_start();
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 ?>
@@ -66,7 +66,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
     <script>
         function followFlower(clientId, sellerId, flowerName) {
-            var xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
             xhr.open("POST", "php/addFollow.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function () {

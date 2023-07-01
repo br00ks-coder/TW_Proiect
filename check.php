@@ -3,7 +3,7 @@ session_start();
 
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 if($validationResult==0)
@@ -82,6 +82,8 @@ if($validationResult==0)
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                 </select>
+
+                <label for="userId"></label>
                 <input style="display: none;" name="userId" id="userId" value="<?php echo $userId?>">
 
                 <label for="flower_images">Flower Images:</label>
@@ -95,7 +97,5 @@ if($validationResult==0)
 <?php
 include_once './view/Footer.php';
 ?>
-
 </body>
-
 </html>

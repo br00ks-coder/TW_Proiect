@@ -2,23 +2,22 @@
 session_start();
 
 // Check if the session is active and the user is authenticated
-
-
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 if (!$validationResult) {
     header("Location: login.php");
 }
-// C
-$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com port=5432 dbname=webgardening user=postgres password=paroladb");
+
+$dbconn = pg_connect("host=webgardeningrds.cepe7iq3kfqk.eu-north-1.rds.amazonaws.com
+ port=5432 dbname=webgardening user=postgres password=paroladb");
 if (!$dbconn) {
     // Handle connection error
     die("Connection failed: " . pg_last_error());
 }
-include('php/flowers_admin.php');
+include_once 'php/flowers_admin.php';
 ?>
 
 <!DOCTYPE html>
@@ -46,39 +45,31 @@ include('php/flowers_admin.php');
 <nav class="nav_bar">
     <ul class="login_list">
         <!-- HTML code -->
-        <a href="php/logout.php">
-            <li class="logout">Log out</li>
-        </a>
-
-
+        <li class="logout">
+            <a href="php/logout.php">Log out</a>
+        </li>
     </ul>
 </nav>
+
 <?php
 include_once './view/Header.php';
 ?>
 
 <main id="main">
-
-
     <section>
         <h2>USERS:</h2>
         <div id="user-container">
             <!-- User data will be loaded dynamically here -->
         </div>
-
     </section>
 
     <section>
         <h2>FLOWER ADMINISTRATION:</h2>
-
         <?php
         // Display the generated <div> elements
         generateDivs($flowers);
         ?>
-
-
     </section>
-
 
     <section>
         <h2>Add Flower</h2>
@@ -93,7 +84,7 @@ include_once './view/Header.php';
             <input type="number" id="priceAdd" name="priceAdd" required>
             <br>
             <label for="description">Description:</label>
-            <input type="text" id="decription" name="description" required>
+            <input type="text" id="description" name="description" required>
 
             <label for="difficulty">Difficulty:</label>
             <input type="text" id="difficulty" name="difficulty" required>
@@ -110,8 +101,6 @@ include_once './view/Header.php';
     </section>
 
     <script src="js/admin.js"></script>
-
-
 </main>
 
 <?php
@@ -119,5 +108,4 @@ include_once './view/Footer.php';
 ?>
 
 </body>
-
 </html>

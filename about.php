@@ -2,15 +2,11 @@
 session_start();
 
 // Check if the session is active and the user is authenticated
-
-
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +17,6 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/GeneralStyle.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <script src="login.js"></script>
     <script
             src="https://kit.fontawesome.com/fb7068e0f1.js"
             crossorigin="anonymous"
@@ -53,7 +48,6 @@ include_once './view/Header.php';
 ?>
 
 <main style="height: 75vh;">
-
     <div class="about-us">
         <h2>About Us</h2>
         <p>
@@ -66,6 +60,7 @@ include_once './view/Header.php';
             hobby—it's a way to connect with nature, find solace in the beauty of plants, and create a harmonious
             environment.
         </p>
+
         <p>
             The creators of this project are:
             Alexandru Balan,
@@ -84,5 +79,4 @@ include_once './view/Footer.php';
 ?>
 
 </body>
-
 </html>

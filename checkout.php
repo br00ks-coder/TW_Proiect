@@ -2,11 +2,10 @@
 session_start();
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-if($validationResult==0)
-{
+if ($validationResult == 0) {
     header("Location: index.php");
 }
 ?>
@@ -14,16 +13,16 @@ if($validationResult==0)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/GeneralStyle.css">
-    <link rel="stylesheet" href="css/buy.css" />
+    <link rel="stylesheet" href="css/buy.css"/>
 
     <script
-        src="https://kit.fontawesome.com/fb7068e0f1.js"
-        crossorigin="anonymous"
+            src="https://kit.fontawesome.com/fb7068e0f1.js"
+            crossorigin="anonymous"
     ></script>
     <!--used for icons-->
     <title>Web Gardening</title>
@@ -52,28 +51,36 @@ if($validationResult==0)
 <main id="checkout" style="height: fit-content">
     <h1>Your shopping list:</h1>
     <section class="flowers">
-        <?php include_once './php/checkout.php'?>
+        <?php include_once './php/checkout.php' ?>
     </section>
 
     <section>
         <h2>Checkout Information</h2>
         <form action="php/place_order.php" method="post" id="checkout-form">
             <label for="firstname">First Name:</label>
-            <input type="text" id="name" name="firstName" required>
+            <input type="text" id="firstname" name="firstName" required>
+
             <label for="lastname" style="margin-top: 5%;">Last name:</label>
-            <input type="text" id="name" name="lastName" required>
+            <input type="text" id="lastname" name="lastName" required>
+
             <label for="address">Address:</label>
-            <input type="text" id="street" name="street" placeholder="Street" required>
+            <input type="text" id="address" name="street" placeholder="Street" required>
+
+            <label for="city"></label>
             <input type="text" id="city" name="city" placeholder="City" required>
+
+            <label for="zip"></label>
             <input type="text" id="zip" name="zipCode" placeholder="ZIP Code" required>
+
             <!-- Add any other necessary address fields here -->
+
             <label for="delivery">Delivery Type:</label>
             <select id="delivery" name="deliveryType" required>
                 <option value="fan">Fan courier</option>
                 <option value="cargus">Cargus</option>
                 <option value="ridicare">Ridicare din sediu</option>
-
             </select>
+
             <label for="payment">Payment Method:</label>
             <select id="payment" name="paymentMethod" required>
                 <option value="cash">Cash</option>
@@ -101,18 +108,25 @@ if($validationResult==0)
             <div id="bankTransferDetails" style="display: none;">
                 <label for="bankName">Bank Name:</label>
                 <input type="text" id="bankName" name="bankName">
-                <input style="display: none;" name="userId" id="userId" value="<?php echo $userId?>">
+
+                <label for="userId"></label>
+                <input style="display: none;" name="userId" id="userId" value="<?php echo $userId ?>">
+
                 <label for="accountNumber">Account Number:</label>
                 <input type="text" id="accountNumber" name="accountNumber">
             </div>
-            <input type="hidden" name="totalPrice" value="<?php echo $totalPrice; ?>">
 
+            <input type="hidden" name="totalPrice" value="<?php echo $totalPrice; ?>">
             <p>Total Price: <?php echo $totalPrice; ?></p>
 
             <button type="submit">Place Order</button>
         </form>
     </section>
 </main>
+
+<?php
+include_once './view/Footer.php';
+?>
 
 <script>
     const paymentSelect = document.getElementById('payment');
@@ -141,11 +155,5 @@ if($validationResult==0)
     });
 </script>
 
-
-<?php
-include_once './view/Footer.php';
-?>
-
 </body>
-
 </html>

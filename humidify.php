@@ -2,33 +2,27 @@
 session_start();
 
 // Check if the session is active and the user is authenticated
-
-
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
-if($validationResult==0)
-{
+if ($validationResult == 0) {
     header("Location: index.php");
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Head content goes here -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/GeneralStyle.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/buy.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/GeneralStyle.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/buy.css"/>
     <script
             src="https://kit.fontawesome.com/fb7068e0f1.js"
             crossorigin="anonymous"
@@ -45,13 +39,13 @@ if($validationResult==0)
 <main style="height: fit-content">
     <h2>Planted Flowers</h2>
     <section class="flowers">
-        <?php include_once "php/humFunc.php"            ?>
+        <?php include_once "php/humFunc.php" ?>
     </section>
 
     <script>
         function setFlowerImages() {
-            var nameInput = document.getElementById("name");
-            var flowerImagesInput = document.getElementById("flower_images");
+            let nameInput = document.getElementById("name");
+            let flowerImagesInput = document.getElementById("flower_images");
             flowerImagesInput.value = nameInput.value;
         }
     </script>
@@ -60,7 +54,7 @@ if($validationResult==0)
         <h2>Add Flower</h2>
         <label for="name">Name:</label>
         <select id="name" name="name" required>
-            <option value="rosee">Rose</option>
+            <option value="rose">Rose</option>
             <option value="tulip">Tulip</option>
             <option value="lily">Lily</option>
             <option value="orchid">Orchid</option>
@@ -71,8 +65,7 @@ if($validationResult==0)
             <option value="peony">Peony</option>
         </select>
 
-
-    <label for="description">Description:</label>
+        <label for="description">Description:</label>
         <textarea id="description" name="description" required></textarea>
 
         <label for="price">Price:</label>
@@ -92,15 +85,16 @@ if($validationResult==0)
         <input type="number" id="humidity" name="humidity" required>
 
         <input type="hidden" name="userId" id="userId" value="<?php echo $userId; ?>">
-<br>
-        <input type="text" id="flower_images" name="flower_images" style="display: none;">
-        <input type="submit" value="Add Flower" onclick="setFlowerImages()">
 
+        <br>
+
+        <label for="flower_images"></label>
+        <input type="text" id="flower_images" name="flower_images" style="display: none;">
+
+        <input type="submit" value="Add Flower" onclick="setFlowerImages()">
     </form>
 </main>
 
 <?php include_once './view/Footer.php'; ?>
-
 </body>
-
 </html>

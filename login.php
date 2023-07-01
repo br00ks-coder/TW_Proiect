@@ -6,7 +6,7 @@ session_start();
 
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 if($validationResult)
@@ -83,7 +83,7 @@ if($validationResult)
 
         <script>
             document.getElementById("2fa").addEventListener("change", function() {
-                var codeContainer = document.getElementById("code-container");
+                let codeContainer = document.getElementById("code-container");
                 codeContainer.style.display = this.checked ? "block" : "none";
             });
         </script>

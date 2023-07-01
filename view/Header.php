@@ -1,9 +1,10 @@
 <head>
     <link rel="stylesheet" href="../css/header.css">
-
     <title>Header view</title>
 </head>
+
 <header class="header">
+
     <div class="logo_icon_container">
         <div class="logo_container">
             <a class="logo" href="../index.php">
@@ -13,195 +14,216 @@
         </div>
         <div class="icon_container"><i class="fa-solid fa-bars" id="open_menu"></i></div>
     </div>
+
     <h1 class="title">John Doe's Web Garden</h1>
-    <nav class="nav_bar">
-        <ul class="login_list">
-            <!-- HTML code -->
 
-
-            <?php if ($validationResult): ?>
+    <nav class="nav_bar" aria-label="login_nav_bar">
+        <?php if ($validationResult): ?>
+            <ul class="login_list">
                 <!-- Display content for logged-in users -->
 
+                <li id="fav-window" style="display: none;">
+                    <h2>Favorites</h2>
+                    <ul id="fav-items">
+                    </ul>
+                </li>
 
-    <li id="fav-window" style="display: none;">
-        <h2>Favorites</h2>
-        <ul id="fav-items">
-        </ul>
-    </li>
-    <button id="cart_button" onclick="toggleFavWindow()"><i class="fa-solid fa-heart"></i></button>
+                <li>
+                    <button id="cart_button" onclick="toggleFavWindow()"><i class="fa-solid fa-heart"></i></button>
+                </li>
 
+                <li id="cart-window" style="display: none;">
+                    <h2>Cart</h2>
+                    <ul id="cart-items">
+                    </ul>
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                </li>
 
-    <li id="cart-window" style="display: none;">
-        <h2>Cart</h2>
-        <ul id="cart-items">
-        </ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-    </li>
-    <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart" ></i></button>
+                <li>
+                    <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart"></i></button>
+                </li>
 
+                <li class="profile">
+                    <a href="../profile.php">Profile</a>
+                </li>
 
+                <li class="logout">
+                    <a href="../php/logout.php">Log out</a>
+                </li>
 
-                <a href="../profile.php">
-                    <li class="profile">Profile</li>
-                </a>
+            </ul>
 
-                <a href="../php/logout.php">
-                    <li class="logout">Log out</li>
-                </a>
+        <?php else: ?>
+            <!-- Display content for non-logged-in users -->
+            <ul class="login_list">
+                <li class="log_in">
+                    <a href="../login.php">Log In</a>
+                </li>
 
-
-                </ul>
-            <?php else: ?>
-                <!-- Display content for non-logged-in users -->
-
-                <a href="../login.php">
-                    <li class="log_in">Log In</li>
-                </a>
-                <a href="../register.php">
-                    <li class="register">Register</li>
-                </a>
-
-
-            <?php endif; ?>
-        </ul>
+                <li class="register">
+                    <a href="../register.php">Register</a>
+                </li>
+            </ul>
+        <?php endif; ?>
     </nav>
+
     <div class="horizontal_rule"></div>
-    <nav class="nav_list">
-             <?php if ($validationResult): ?>
-        <ul>
 
-            <a href="../about.php">
-                <li class="about_us">About</li>
-            </a>
-            <a href="../check.php">
-                <li class="check_flowers">Warehouse</li>
-            </a>
-            <a href="../buy.php">
-                <li class="buy_flowers">Shop</li>
-            </a>
-            <a href="../humidify.php">
-                <li class="humidify">Garden</li>
-            </a>
+    <nav class="nav_list" aria-label="main_menu">
+        <?php if ($validationResult): ?>
+            <ul>
 
-            <a href="../contact.php">
-                <li class="contact_button">Contact</li>
-            </a>
-            <a href="../help.php" >
-                <li class="contact_button"> Get Help</li>
-            </a>
+                <li class="about_us">
+                    <a href="../about.php">About</a>
+                </li>
 
-        </ul>
-             <?php else: ?>
+                <li class="check_flowers">
+                    <a href="../check.php">Warehouse</a>
+                </li>
 
-        <ul>
-            <a href="../login.php">
-                <li class="log_in">Log In</li>
-            </a>
-            <a href="../register.php">
-                <li class="register">Register</li>
-            </a>
+                <li class="buy_flowers">
+                    <a href="../buy.php">Shop</a>
+                </li>
 
-            <a href="../about.php">
-                <li class="about_us">About</li>
-            </a>
-            <a href="../buy.php">
-                <li class="buy_flowers">Shop</li>
-            <a href="../contact.php">
-                <li class="contact_button">Contact</li>
-            </a>
-            <a href="../help.php" >
-                <li class="contact_button"> Get Help</li>
-            </a>
+                <li class="humidify">
+                    <a href="../humidify.php">Garden</a>
+                </li>
 
-        </ul>
+                <li class="contact_button">
+                    <a href="../contact.php">Contact</a>
+                </li>
 
-             <?php endif; ?>
+                <li class="contact_button">
+                    <a href="../help.php">Get Help</a>
+                </li>
 
+            </ul>
+        <?php else: ?>
 
-    </nav>
-    <nav id="nav_for_media">
+            <ul>
 
-            <?php if ($validationResult): ?>
-                <ul><i class="fa-solid fa-xmark" id="close_menu"></i>
+                <li class="log_in">
+                    <a href="../login.php">Log In</a>
+                </li>
 
-                    <a href="../about.php">
-                        <li class="about_us">About</li>
-                    </a>
-                    <a href="../check.php">
-                        <li class="check_flowers">Warehouse</li>
-                    </a>
-                    <a href="../buy.php">
-                        <li class="buy_flowers">Shop</li>
-                    </a>
-                    <a href="../humidify.php">
-                        <li class="humidify">Garden</li>
-                    </a>
+                <li class="register">
+                    <a href="../register.php">Register</a>
+                </li>
 
-                    <a href="../contact.php">
-                        <li class="contact_button">Contact</li>
-                    </a>
-                    <a href="../help.php" >
-                        <li class="contact_button"> Get Help</li>
-                    </a>
-                    <a href="../php/logout.php">
-                        <li class="logout">Log out</li>
-                    </a>
+                <li class="about_us">
+                    <a href="../about.php"> About</a>
+                </li>
 
-                    
+                <li class="buy_flowers">
+                    <a href="../buy.php">Shop</a>
+                </li>
 
-                        <li id="fav-window" style="display: none;">
-                            <h2>Favorites</h2>
-                            <ul id="fav-items">
-                            </ul>
-                        </li>
-                        <button id="cart_button" onclick="location.href = '../buy.php';"><i class="fa-solid fa-heart"></i></button>
+                <li class="contact_button">
+                    <a href="../contact.php">Contact</a>
+                </li>
 
-                        <li id="cart-window" style="display: none;">
-                            <h2>Cart</h2>
-                            <ul id="cart-items">
-                            </ul>
-                            <p>Total: $<span id="cart-total">0.00</span></p>
-                        </li>
-                        <button id="cart_button" onclick="location.href = '../checkout.php';"><i class="fa fa-shopping-cart" ></i></button>
+                <li class="contact_button">
+                    <a href="../help.php">Get Help</a>
+                </li>
 
+            </ul>
 
-                </ul>
-            <?php else: ?>
-
-                <ul>
-                    <a href="../login.php">
-                        <li class="log_in">Log In</li>
-                    </a>
-                    <a href="../register.php">
-                        <li class="register">Register</li>
-                    </a>
-
-                    <a href="../about.php">
-                        <li class="about_us">About</li>
-                    </a>
-                    <a href="../buy.php">
-                        <li class="buy_flowers">Shop</li>
-
-                        <a href="../contact.php">
-                            <li class="contact_button">Contact</li>
-                        </a>
-                        <a href="../help.php" >
-                            <li class="contact_button"> Get Help</li>
-                        </a>
-
-                </ul>
-
-            <?php endif; ?>
-        </ul>
+        <?php endif; ?>
     </nav>
 
+    <nav id="nav_for_media" aria-label="media nav">
+
+        <?php if ($validationResult): ?>
+            <ul>
+                <li><i class="fa-solid fa-xmark" id="close_menu"></i></li>
+
+                <li class="about_us">
+                    <a href="../about.php">About</a>
+                </li>
+
+                <li class="check_flowers">
+                    <a href="../check.php">Warehouse</a>
+                </li>
+
+                <li class="buy_flowers">
+                    <a href="../buy.php">Shop</a>
+                </li>
+
+                <li class="humidify">
+                    <a href="../humidify.php">Garden</a>
+                </li>
+
+                <li class="contact_button">
+                    <a href="../contact.php">Contact</a>
+                </li>
+
+                <li class="contact_button">
+                    <a href="../help.php">Get Help</a>
+                </li>
+
+                <li class="logout">
+                    <a href="../php/logout.php">Log out</a>
+                </li>
+
+                <li id="fav-window" style="display: none;">
+                    <h2>Favorites</h2>
+                    <ul id="fav-items">
+                    </ul>
+                </li>
+
+                <li>
+                    <button id="cart_button" onclick="location.href = '../buy.php';">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </li>
+
+                <li id="cart-window" style="display: none;">
+                    <h2>Cart</h2>
+                    <ul id="cart-items">
+                    </ul>
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                </li>
+
+                <li>
+                    <button id="cart_button" onclick="location.href = '../checkout.php';">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </li>
+            </ul>
+        <?php else: ?>
+
+            <ul>
+                <li class="log_in">
+                    <a href="../login.php">Log In</a>
+                </li>
+
+                <li class="register">
+                    <a href="../register.php">Register</a>
+                </li>
+
+                <li class="about_us">
+                    <a href="../about.php"><a href="../about.php">About</a>
+                </li>
+
+                <li class="buy_flowers">
+                    <a href="../buy.php">Shop</a>
+                </li>
+
+                <li class="contact_button">
+                    <a href="../contact.php">Contact</a>
+                </li>
+
+                <li class="contact_button">
+                    <a href="../help.php">Get Help</a>
+                </li>
+            </ul>
+        <?php endif; ?>
+    </nav>
 </header>
-<div id="background"">
+<div id="background"></div>
 
-</div>
-
-<script src="js/cart.js"></script>
-<script src="js/fav.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/fav.js"></script>
 
 <script>
     const openMobileMenu = document.querySelector('#open_menu');

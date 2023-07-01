@@ -2,8 +2,6 @@
 session_start();
 
 // Check if the session is active and the user is authenticated
-
-
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
 require_once 'php/jwtVerify.php';
@@ -66,7 +64,6 @@ if ($flowerCount == 0) {
                 We created this site to help the people who love flowers be more in touch with them.
                 As a seller or a buyer, our site puts technology
                 to use so that you can check the status of the flowers that you love!
-
             </p>
         </div>
 
