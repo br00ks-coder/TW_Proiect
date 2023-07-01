@@ -1,327 +1,329 @@
 .fa-bars:before, .fa-navicon:before {
-  content: "\f0c9";
-  color:white;
+    content: "\f0c9";
+    color: white;
 }
-main{
-  height: 150vh;
 
-  border-radius: 3%;
-  padding: 5% 3% 2%;
+main {
+    height: 150vh;
 
-  color: #ffffff;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+    border-radius: 3%;
+    padding: 5% 3% 2%;
+
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
 }
 
 form {
-position: relative;
-left: 50%;
-width: 400px;
-margin: 0 auto;
-padding: 20px;
-background: transparent;
-border-radius: 5px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 50%;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-text-align: center;
-margin-bottom: 20px;
-color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .form-group {
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 label {
-display: block;
-font-size: 16px;
-font-weight: bold;
-margin-bottom: 5px;
-color: #ffffff;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
 }
 
 input[type="text"],
 input[type="password"] {
-width: 90%;
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 16px;
-color: #333;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
 }
 
 button[type="button"] {
-  padding: 5px;
-  transition: transform 0.5s; /* Used to come back to original in slow motion */
-  color: #ffffff;
-  background: transparent;
-  border: none;
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
 }
 
 button[type="button"]:hover {
-  color: #fe8a01;
-  transform: translate(-10%, -10%); /* Changing the position */
-  transition: transform 0.6s;
+    color: #fe8a01;
+    transform: translate(-10%, -10%); /* Changing the position */
+    transition: transform 0.6s;
 }
 
 button[type="submit"] {
-  padding: 5px;
-  transition: transform 0.5s; /* Used to come back to original in slow motion */
-  color: #ffffff;
-  background: transparent;
-  border: none;
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
 }
 
 button[type="submit"]:hover {
-  color: #fe8a01;
+    color: #fe8a01;
 }
 
 input[type="submit"] {
-  padding: 5px;
-  transition: transform 0.5s; /* Used to come back to original in slow motion */
-  color: #ffffff;
-  background: transparent;
-  border: none;
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
 }
 
 input[type="submit"]:hover {
-  color: #fe8a01;
+    color: #fe8a01;
 }
 
 .contact-div {
-  background: transparent;
-  padding: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    background: transparent;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .contact-div h2 {
-margin-bottom: 10px;
-  color: #ffffff;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .contact-div form {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-div label {
-  margin-bottom: 5px;
-  color: #ffffff;
+    margin-bottom: 5px;
+    color: #ffffff;
 }
 
 .contact-div input,
 .contact-div textarea {
-padding: 10px;
-margin-bottom: 10px;
-border-radius: 5px;
-border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
 .contact-div textarea {
-height: 50px;
+    height: 50px;
 }
 
 #profileForm {
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 400px;
-  margin: 0 auto;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
 }
 
 #profileForm input[type="text"],
 #profileForm input[type="email"],
 #profileForm textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 #profileForm button {
-  padding: 5px;
-  transition: transform 0.5s; /* Used to come back to original in slow motion */
-  color: #ffffff;
-  background: transparent;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #profileForm button:hover {
-  color: #fe8a01;
+    color: #fe8a01;
 }
 
 #profileForm label {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .contact-div button {
-background: transparent;
-color: white;
-padding: 10px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .flower-div {
-width: 100%;
-height: 100%;
-  margin-left: 5%;
-  border-radius: 5%; /* Adjust the value to control the roundness */
-background-image: url('../resources/rose.jpeg');
-background-size: cover;
-background-position: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+    border-radius: 5%; /* Adjust the value to control the roundness */
+    background-image: url('../resources/rosee.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .card {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .card-img-top {
-  width: 200px;
-  height: 200px;
-  align-self: center;
+    width: 200px;
+    height: 200px;
+    align-self: center;
 }
 
 .show-cart li {
-  display: flex;
+    display: flex;
 }
 
 #cart-window {
-  display: none;
-  position: fixed;
-  top: 50px; /* Adjust the top position to accommodate the dropdown */
-  right: 10px; /* Adjust the right position to align it properly */
-  width: auto; /* Remove fixed width */
-  max-height: 300px; /* Set a maximum height to limit the dropdowns size */
-  overflow-y: auto; /* Add vertical scrolling if necessary */
-  background-color: #405e55;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  transform: none; /* Changing the position */
-  transition: none;
+    display: none;
+    position: fixed;
+    top: 50px; /* Adjust the top position to accommodate the dropdown */
+    right: 10px; /* Adjust the right position to align it properly */
+    width: auto; /* Remove fixed width */
+    max-height: 300px; /* Set a maximum height to limit the dropdowns size */
+    overflow-y: auto; /* Add vertical scrolling if necessary */
+    background-color: #405e55;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: none; /* Changing the position */
+    transition: none;
 }
 
 #cart-window h2 {
-  margin-top: 0;
-  color: #ffffff;
-  text-align: center;
+    margin-top: 0;
+    color: #ffffff;
+    text-align: center;
 }
 
 #cart-window ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 #cart-items > li:hover {
-  color: #ffffff;
-  transform: none; /* Changing the position */
-  transition: none;
+    color: #ffffff;
+    transform: none; /* Changing the position */
+    transition: none;
 
 
 }
-#fav-window {
-  display: flex;
 
-  position: fixed;
-  top: 50px; /* Adjust the top position to accommodate the dropdown */
-  right: 10%; /* Adjust the right position to align it properly */
-  width: auto; /* Remove fixed width */
-  max-height: 300px; /* Set a maximum height to limit the dropdowns size */
-  overflow-y: auto; /* Add vertical scrolling if necessary */
-  background-color: #405e55;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  transform: none; /* Changing the position */
-  transition: none;
+#fav-window {
+    display: flex;
+
+    position: fixed;
+    top: 50px; /* Adjust the top position to accommodate the dropdown */
+    right: 10%; /* Adjust the right position to align it properly */
+    width: auto; /* Remove fixed width */
+    max-height: 300px; /* Set a maximum height to limit the dropdowns size */
+    overflow-y: auto; /* Add vertical scrolling if necessary */
+    background-color: #405e55;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: none; /* Changing the position */
+    transition: none;
 }
 
 #fav-window li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #fav-window p {
-  text-align: right;
-  margin-top: 20px;
-  color: #ffffff;
+    text-align: right;
+    margin-top: 20px;
+    color: #ffffff;
 }
 
-#fav-window  p:hover{
-  color: #ffffff;
+#fav-window p:hover {
+    color: #ffffff;
 }
 
 .quantity-btn {
-  padding: 5px;
-  color: white;
-  background: transparent;
-  border: none;
+    padding: 5px;
+    color: white;
+    background: transparent;
+    border: none;
 }
 
 #fav-window h2 {
-  margin-top: 0;
-  color: #ffffff;
-  text-align: center;
+    margin-top: 0;
+    color: #ffffff;
+    text-align: center;
 }
 
 #fav-window ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 #fav-items > li:hover {
-  color: #ffffff;
-  transform: none; /* Changing the position */
-  transition: none;
+    color: #ffffff;
+    transform: none; /* Changing the position */
+    transition: none;
 }
 
-#checkout{
-  margin-top: 5%;
+#checkout {
+    margin-top: 5%;
 }
 
-#checkout-form{
-  left: 0;
+#checkout-form {
+    left: 0;
 }
 
-.no-style-form{
-  left: 0;
-  box-shadow: none;
+.no-style-form {
+    left: 0;
+    box-shadow: none;
 }
 
-#extractForm{
-  left: 0;
-  width: fit-content;
-  padding: 0;
+#extractForm {
+    left: 0;
+    width: fit-content;
+    padding: 0;
 }
 
 #background {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  background: linear-gradient(-45deg, #6EA751, #018749, #1cac78);
-  background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    background: linear-gradient(-45deg, #6EA751, #018749, #1cac78);
+    background-size: cover;
 
-  z-index: -1;
+    z-index: -1;
 }
 
 

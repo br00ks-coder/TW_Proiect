@@ -6,12 +6,9 @@ $secretKey = 'your-secret-key'; // Replace with your own secret key
 require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
-if($validationResult==0)
-{
+if ($validationResult == 0) {
     header("Location: index.php");
 }
-
-
 
 
 ?>
@@ -60,56 +57,89 @@ if($validationResult==0)
         <?php include_once "php/checkFunc.php" ?>
 
     </section>
-        <section >
-            <script>
-                function setFlowerImages() {
-                    let nameInput = document.getElementById("name");
-                    let flowerImagesInput = document.getElementById("flower_images");
-                    flowerImagesInput.value = nameInput.value;
-                }
-            </script>
-            <form id="add-flowers" method="POST" action="php/add.php">
-                <h2>Add Flower</h2>
-                <label for="name">Name:</label>
-                <select id="name" name="name" required>
-                    <option value="rosee">Rose</option>
-                    <option value="tulip">Tulip</option>
-                    <option value="lily">Lily</option>
-                    <option value="orchid">Orchid</option>
-                    <option value="daisy">Daisy</option>
-                    <option value="carnation">Carnation</option>
-                    <option value="daffodil">Daffodil</option>
-                    <option value="hydrangea">Hydrangea</option>
-                    <option value="peony">Peony</option>
-                </select>
+    <section>
+        <script>
+            function setFlowerImages() {
+                let nameInput = document.getElementById("name");
+                let flowerImagesInput = document.getElementById("flower_images");
+                flowerImagesInput.value = nameInput.value;
 
+                // Create a new XMLHttpRequest object
+                let xhr = new XMLHttpRequest();
 
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" required></textarea>
+                // Define the API endpoint URL
+                let apiUrl = 'http://localhost/flowersEP.php/flowers/add';
 
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price" step="0.01" required>
+                // Create the request body data
+                let requestBody = {
+                    name: nameInput.value,
+                    description: document.getElementById("description").value,
+                    price: document.getElementById("price").value,
+                    available_quantity: document.getElementById("available_quantity").value,
+                    difficulty: document.getElementById("difficulty").value
+                };
 
-                <label for="available_quantity">Available Quantity:</label>
-                <input type="number" id="available_quantity" name="available_quantity" required>
+                // Set up the request
+                xhr.open("POST", apiUrl, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
 
-                <label for="difficulty">Difficulty:</label>
-                <select id="difficulty" name="difficulty" required>
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
-                </select>
+                // Send the request
+                xhr.send(JSON.stringify(requestBody));
 
-                <label for="userId"></label>
-                <input style="display: none;" name="userId" id="userId" value="<?php echo $userId?>">
+                // Handle the response
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        // Request was successful
+                        let response = JSON.parse(xhr.responseText);
+                        console.log(response);
+                        alert("Flower added successfully");
+                    } else {
+                        // Request failed
+                        alert("Failed to add flower: " + xhr.responseText);
+                    }
+                };
+            }
+        </script>
+        <form id="add-flowers">
+            <h2>Add Flower</h2>
+            <label for="name">Name:</label>
+            <select id="name" name="name" required>
+                <option value="rose">Rose</option>
+                <option value="tulip">Tulip</option>
+                <option value="lily">Lily</option>
+                <option value="orchid">Orchid</option>
+                <option value="daisy">Daisy</option>
+                <option value="carnation">Carnation</option>
+                <option value="daffodil">Daffodil</option>
+                <option value="hydrangea">Hydrangea</option>
+                <option value="peony">Peony</option>
+            </select>
 
-                <label for="flower_images"></label>
-                <input type="text" id="flower_images" name="flower_images" style="display: none;">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
 
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
 
-                <input type="submit" value="Add Flower" onclick="setFlowerImages()">
-            </form>
-        </section>
+            <label for="available_quantity">Available Quantity:</label>
+            <input type="number" id="available_quantity" name="available_quantity" required>
+
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" name="difficulty" required>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+
+            <label for="userId"></label>
+            <input style="display: none;" name="userId" id="userId" value="<?php echo $userId ?>">
+
+            <label for="flower_images"></label>
+            <input type="text" id="flower_images" name="flower_images" style="display: none;">
+
+            <input type="submit" value="Add Flower" onclick="setFlowerImages();">
+        </form>
+    </section>
 </main>
 
 <?php
