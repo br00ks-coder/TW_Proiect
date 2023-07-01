@@ -74,7 +74,9 @@ if ($flowerCount == 0) {
             <img src="resources/flori.jpg" alt="Flower greenhouse"/>
         </div>
     </section>
+
     <br/>
+
     <section class="section2">
         <div class="section2 image" id="Photo_2">
             <img src="resources/ghiveci.jpg" alt="FlowerShop"/>

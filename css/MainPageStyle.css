@@ -21,6 +21,8 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:100px;
 
 }
 
@@ -29,23 +31,25 @@ section > div {
     width: 30%;
     height: 100%;
     display: flex;
+
     text-align: center;
     color: white;
     justify-content: center;
+    align-items: center;
 }
 
 .section1 > div  {
-    min-height: 350px;
-    max-height: fit-content;
-    width: 90%;
+    min-height: 30%;
+    height: 40%;
     border-radius: 20px;
-    text-align: right;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
+.section1 > .text{
+    width: 50%;
+}
 
 section > .text {
     height: fit-content;
@@ -58,7 +62,7 @@ section > .image > img {
     border-radius: 45px;
     padding: 40px;
     height: 450px;
-
+    width: calc(600px + 100%);
 }
 
 
@@ -125,16 +129,14 @@ section > .image > img {
     transform: none; /* Changing the position */
     transition: none;
 
-
 }
-
-
 
 #cart-window h2 {
     margin-top: 0;
     color: #ffffff;
     text-align: center;
 }
+
 #cart-window h2:hover{
     color: #ffffff;
 }
@@ -166,7 +168,6 @@ section > .image > img {
 }
 
 #background {
-
     top: 0;
     left: 0;
     bottom: 0;
