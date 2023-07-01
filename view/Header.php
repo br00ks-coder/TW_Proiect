@@ -21,16 +21,30 @@
 
             <?php if ($validationResult): ?>
                 <!-- Display content for logged-in users -->
-            <li id="cart-window" style="display: none;">
-                <h2>Cart</h2>
-                <ul id="cart-items">
-                </ul>
-                <p>Total: $<span id="cart-total">0.00</span></p>
-            </li>
-            <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart" ></i></button>
+
+<section>
+    <li id="fav-window" style="display: none;">
+        <h2>Favorites</h2>
+        <ul id="fav-items">
+        </ul>
+    </li>
+    <button id="cart_button" onclick="toggleFavWindow()"><i class="fa-solid fa-heart"></i></button>
+
+
+    <li id="cart-window" style="display: none;">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+    </li>
+    <button id="cart_button" onclick="toggleCartWindow()"><i class="fa fa-shopping-cart" ></i></button>
+
+</section>
+
                 <a href="../profile.php">
                     <li class="profile">Profile</li>
                 </a>
+
                 <a href="../php/logout.php">
                     <li class="logout">Log out</li>
                 </a>
@@ -68,9 +82,7 @@
             <a href="../humidify.php">
                 <li class="humidify">Garden</li>
             </a>
-            <a href="../checkout.php" >
-                <li class="contact_button">Checkout</li>
-            </a>
+
             <a href="../contact.php">
                 <li class="contact_button">Contact</li>
             </a>
@@ -94,9 +106,7 @@
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>
-                <a href="../checkout.php" >
-                    <li class="contact_button">Checkout</li>
-                </a>
+
         </ul>
 
              <?php endif; ?>
@@ -120,9 +130,7 @@
             <a href="../buy.php">
                 <li class="buy_flowers">Buy Flowers</li>
             </a>
-            <a href="../checkout.php" >
-                <li class="contact_button">Checkout</li>
-            </a>
+
             <a href="../help.php" >
                 <li class="contact_button"> Get Help</li>
             </a>
@@ -137,7 +145,9 @@
 <div id="background"">
 
 </div>
+
 <script src="js/cart.js"></script>
+<script src="js/fav.js"></script>
 
 <script>
     const openMobileMenu = document.querySelector('#open_menu');

@@ -33,7 +33,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 h2 {
 text-align: center;
 margin-bottom: 20px;
-color: #333;
+color: #ffffff;
 }
 
 .form-group {
@@ -45,7 +45,7 @@ display: block;
 font-size: 16px;
 font-weight: bold;
 margin-bottom: 5px;
-color: #333;
+color: #ffffff;
 }
 
 input[type="text"],
@@ -59,19 +59,41 @@ color: #333;
 }
 
 button[type="button"] {
-background-color: #4CAF50;
-color: white;
-padding: 10px 20px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
-transition: background-color 0.3s ease;
+  padding: 5px;
+  transition: transform 0.5s; /* Used to come back to original in slow motion */
+  color: #ffffff;
+  background: transparent;
+  border: none;
 }
 
 button[type="button"]:hover {
-background-color: #3e8e41;
+  color: #fe8a01;
+  transform: translate(-10%, -10%); /* Changing the position */
+  transition: transform 0.6s;
+}
+button[type="submit"] {
+  padding: 5px;
+  transition: transform 0.5s; /* Used to come back to original in slow motion */
+  color: #ffffff;
+  background: transparent;
+  border: none;
+}
+
+button[type="submit"]:hover {
+  color: #fe8a01;
+
+}
+input[type="submit"] {
+  padding: 5px;
+  transition: transform 0.5s; /* Used to come back to original in slow motion */
+  color: #ffffff;
+  background: transparent;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  color: #fe8a01;
+
 }
 
 .contact-div {
@@ -111,13 +133,11 @@ border: none;
 height: 50px;
 }
 #profileForm {
-  background-color: #f2f2f2;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 400px;
   margin: 0 auto;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -134,16 +154,16 @@ height: 50px;
 }
 
 #profileForm button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  padding: 5px;
+  transition: transform 0.5s; /* Used to come back to original in slow motion */
+  color: #ffffff;
+  background: transparent;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #profileForm button:hover {
-  background-color: #45a049;
+  color: #fe8a01;
 }
 
 #profileForm label {
@@ -160,9 +180,7 @@ cursor: pointer;
 transition: background-color 0.3s ease;
 }
 
-.contact-div button:hover {
-background-color: #fe8a01;
-}
+
 .flower-div {
 width: 100%;
 height: 100%;
@@ -174,9 +192,7 @@ background-position: center;
 }
 
 
-.show-cart li {
-  display: flex;
-}
+
 .card {
   margin-bottom: 20px;
 }
@@ -185,7 +201,11 @@ background-position: center;
   height: 200px;
   align-self: center;
 }
+.show-cart li {
+  display: flex;
+}
 #cart-window {
+
   display: none;
   position: fixed;
   top: 50px; /* Adjust the top position to accommodate the dropdown */
@@ -193,7 +213,7 @@ background-position: center;
   width: auto; /* Remove fixed width */
   max-height: 300px; /* Set a maximum height to limit the dropdown's size */
   overflow-y: auto; /* Add vertical scrolling if necessary */
-  background-color: #1b4d3e;
+  background-color: #405e55;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -220,18 +240,34 @@ background-position: center;
 
 
 }
+#fav-window {
+  display: flex;
 
-#cart-window li {
+  position: fixed;
+  top: 50px; /* Adjust the top position to accommodate the dropdown */
+  right: 10%; /* Adjust the right position to align it properly */
+  width: auto; /* Remove fixed width */
+  max-height: 300px; /* Set a maximum height to limit the dropdown's size */
+  overflow-y: auto; /* Add vertical scrolling if necessary */
+  background-color: #405e55;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transform: none; /* Changing the position */
+  transition: none;
+}
+#fav-window li {
   margin-bottom: 10px;
 }
 
-#cart-window p {
+#fav-window p {
   text-align: right;
   margin-top: 20px;
   color: #ffffff;
 }
 
-#cart-window  p:hover{
+#fav-window  p:hover{
   color: #ffffff;
 }
 .quantity-btn {
@@ -241,6 +277,28 @@ background-position: center;
   background: transparent;
   border: none;
 }
+#fav-window h2 {
+  margin-top: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+#fav-window ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#fav-items > li:hover {
+
+  color: #ffffff;
+  transform: none; /* Changing the position */
+  transition: none;
+
+
+}
+
+
+
 
 #checkout{
   margin-top: 5%;

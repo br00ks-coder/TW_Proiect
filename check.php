@@ -7,6 +7,9 @@ require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +21,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <link rel="stylesheet" href="css/GeneralStyle.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/buy.css"/>
+
     <script
             src="https://kit.fontawesome.com/fb7068e0f1.js"
             crossorigin="anonymous"
@@ -50,6 +54,7 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     <h2>My Flowers</h2>
     <section class="flowers">
         <?php include_once "php/checkFunc.php" ?>
+
     </section>
         <section >
 

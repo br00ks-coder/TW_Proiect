@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a9f86e5b-67c2-4472-bff2-c8b860ad087a" name="remote-server" url="http://16.16.82.143/">
+      <webServer id="4340bba1-fe22-4088-9c36-dcc102eeaa6d" name="proiecttw" url="http://localhost">
         <fileTransfer accessType="LOCAL" port="0" />
       </webServer>
     </option>

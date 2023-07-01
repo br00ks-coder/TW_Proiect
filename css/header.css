@@ -57,6 +57,18 @@
     justify-content: space-around;
     align-items: center;
 }
+button[type="button"] {
+    padding: 5px;
+    transition: transform 0.5s; /* Used to come back to original in slow motion */
+    color: #ffffff;
+    background: transparent;
+    border: none;
+}
+
+button[type="button"]:hover {
+    color: #fe8a01;
+
+}
 
 @media only screen and (max-width: 576px) {
 
