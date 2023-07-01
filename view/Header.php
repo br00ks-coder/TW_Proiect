@@ -102,14 +102,6 @@
 
             <ul>
 
-                <li class="log_in">
-                    <a href="../login.php">Log In</a>
-                </li>
-
-                <li class="register">
-                    <a href="../register.php">Register</a>
-                </li>
-
                 <li class="about_us">
                     <a href="../about.php"> About</a>
                 </li>
