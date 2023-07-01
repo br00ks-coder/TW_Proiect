@@ -10,6 +10,13 @@ require 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
+if($validationResult==0)
+{
+    header("Location: index.php");
+}
+
+
+
 ?>
 
 <!DOCTYPE html>

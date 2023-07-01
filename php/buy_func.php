@@ -42,10 +42,14 @@ if (isset($responseData['error'])) {
             echo '<p>Available Quantity: ' . $flower['available_quantity'] . '</p>';
             echo '<p>Difficulty to Maintain: ' . $flower['difficulty'] . '</p>';
             echo '<img class="flower-image" src="' . $flower['flower_images'] . '.jpg" >';
-            echo '<button type = "button" onclick="addToCart(\'' . $flower['name']
-                . '\', ' . $flower['price']
-                . ', ' . $userId .
-                ', ' . $flower['user_id'] . ')">Buy</button>';
+
+            if (verifyJwtToken($jwtToken, $secretKey)) {
+                echo '<button type="button" onclick="addToCart(\'' . $flower['name']
+                    . '\', ' . $flower['price']
+                    . ', ' . $userId .
+                    ', ' . $flower['user_id'] . ')">Buy</button>';
+            }
+
             echo ' <script src="/js/cart.js"></script>';
             echo '</div>';
         }

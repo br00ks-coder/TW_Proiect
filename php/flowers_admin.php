@@ -22,8 +22,8 @@ function generateDivs($flowers) {
 
         // Admin controls (delete and quantity update)
         echo "<form method='post' action=''>";
-        echo "<p>Flower Name: $flowerName</p>";
-        echo "<p>Available Quantity: $availableQuantity</p>";
+        echo "<p class='flower-name-admin'>Flower Name: $flowerName</p>";
+        echo "<p class='flower-name-admin'>Available Quantity: $availableQuantity</p>";
         echo "<input type='hidden' name='flowerId' value='$flowerId'>";
         echo "<input type='submit' name='delete' value='Delete'>";
         echo "<input type='number' name='newQuantity' value='$availableQuantity'>";

@@ -64,6 +64,20 @@ $validationResult = verifyJwtToken($jwtToken, $secretKey);
     </section>
 
 
+    <script>
+        function followFlower(clientId, sellerId, flowerName) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/addFollow.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    // Handle the response from the server if needed
+                    console.log(xhr.responseText);
+                }
+            };
+            xhr.send("clientId=" + clientId + "&sellerId=" + sellerId + "&flowerName=" + flowerName);
+        }
+    </script>
 
 
 
