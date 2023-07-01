@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $availableQuantity = $_POST['available_quantity'];
     $difficulty = $_POST['difficulty'];
     $flowerImages = $_POST['flower_images'];
+    $flowerImages= "resources/" . $flowerImages;
+
     $userId = $_POST['userId']; // Assuming you have the user ID stored in the session
 
     // Insert flower details into the database
