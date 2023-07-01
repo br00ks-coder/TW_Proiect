@@ -3,7 +3,7 @@ session_start();
 
 $jwtToken = $_COOKIE['jwt_token'] ?? null; // Example: Retrieving from a cookie
 $secretKey = 'your-secret-key'; // Replace with your own secret key
-require 'php/jwtVerify.php';
+require_once 'php/jwtVerify.php';
 
 $validationResult = verifyJwtToken($jwtToken, $secretKey);
 
@@ -51,19 +51,24 @@ include_once './view/Header.php';
     <main>
         <form method="POST" action="php/registerFunc.php">
             <h2>Forum Registration</h2>
+
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username2" name="username" />
+                <input type="text" id="username" name="username" />
             </div>
+
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password2" name="password" />
+                <input type="password" id="password" name="password" />
             </div>
+
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password2" name="confirm-password" />
+                <input type="password" id="confirm-password" name="confirm-password" />
             </div>
+
             <button type="submit">Register</button>
+
             <div id="message" style="z-index: 2;">
                 <?php
                 if (isset($_SESSION['message'])) {

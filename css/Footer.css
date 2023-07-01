@@ -1,39 +1,40 @@
 /*----------The footer of the page----------*/
 #footer {
     position: absolute;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     background: #1b4d3e;
     clear: both;
     border-top-left-radius: 20px; /*Nice round corners*/
     border-top-right-radius: 20px;
     color: #ffffff;
     padding-top: 0.5%; /* Padding for content */
-    height: 10rem;
+    height: fit-content;
     display: flex;
     justify-content: space-evenly;
     font-size: 1rem;
+    flex-wrap: wrap;
+    column-gap: 20px;
 }
 
 .location > iframe {
     width: 70%;
     height: 30%;
-
 }
 
-@media only screen and (max-width: 576px)
-{
+@media only screen and (max-width: 576px) {
 
-        #footer {
+    #footer {
 
-            font-size: 0.7rem;
-            display: block;
-            text-align: center;
-            height: fit-content;
-            
-        }
-    .location > iframe{
+        font-size: 0.7rem;
+        display: block;
+        text-align: center;
+        height: fit-content;
 
-       display: none;
+    }
+
+    .location>iframe{
+        width: 50%;
+        height: 10%;
     }
 }
