@@ -1,0 +1,11 @@
+
+aphp:S112Q"FDefine and throw a dedicated exception instead of using a generic one.(±îñü8æŞ¦ü1
+bphp:S112†"FDefine and throw a dedicated exception instead of using a generic one.(±îñü8æŞ¦ü1
+bphp:S112ª"FDefine and throw a dedicated exception instead of using a generic one.(±îñü8çŞ¦ü1
+‰	php:S1192"mDefine a constant instead of duplicating this literal "Something went wrong!Please contact support." 3 times.(Œ¯ÖŠ8¥ë†ü1
+~	php:S1192"cDefine a constant instead of duplicating this literal "HTTP/1.1 500 Internal Server Error" 4 times.(Ì–ØV8¥ë†ü1
+t	php:S1192Q"XDefine a constant instead of duplicating this literal "Required fields missing" 3 times.(±îñü8çŞ¦ü1
+q	php:S1192""UDefine a constant instead of duplicating this literal "Method not supported" 4 times.(ñòÌ8¦ë†ü1
+{	php:S1192'"_Define a constant instead of duplicating this literal "Content-Type: application/json" 8 times.(ÕŒø¨8¦ë†ü1
+ƒ	php:S1192#"bDefine a constant instead of duplicating this literal "HTTP/1.1 422 Unprocessable Entity" 4 times.(Ë»ü³úÿÿÿÿ8¦ë†ü1
+l	php:S1192'"PDefine a constant instead of duplicating this literal "HTTP/1.1 200 OK" 4 times.(ÕŒø¨8¦ë†ü1

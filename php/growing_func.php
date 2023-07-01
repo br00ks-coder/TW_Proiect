@@ -43,10 +43,10 @@ while ($row = pg_fetch_assoc($result)) {
 
     if (pg_num_rows($checkResult) > 0) {
         // Flower is already followed
-        echo '<button id="heart-button" onclick="followFlower(' . $clientId . ', ' . $sellerId . ', \'' . $flowerName . '\')">Watching</button>';
+        echo '<button id="heart-button" type="submit" onclick="followFlower(' . $clientId . ', ' . $sellerId . ', \'' . $flowerName . '\')">Watching</button>';
     } else {
         // Flower is not followed
-        echo '<button id="heart-button" onclick="followFlower(' . $clientId . ', ' . $sellerId . ', \'' . $flowerName . '\')">Follow</button>';
+        echo '<button id="heart-button" type="submit" onclick="followFlower(' . $clientId . ', ' . $sellerId . ', \'' . $flowerName . '\')">Follow</button>';
     }
     }
     echo '</div>';
