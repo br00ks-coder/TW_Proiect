@@ -101,7 +101,6 @@
         <?php else: ?>
 
             <ul>
-
                 <li class="about_us">
                     <a href="../about.php"> About</a>
                 </li>
@@ -117,7 +116,6 @@
                 <li class="contact_button">
                     <a href="../help.php">Get Help</a>
                 </li>
-
             </ul>
 
         <?php endif; ?>

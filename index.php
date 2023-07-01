@@ -105,6 +105,7 @@ if ($flowerCount == 0) {
         </div>
 
         <?php if ($validationResult): ?>
+
             <div class="section3 stats" id="Stats_progress_bar">
                 <p>The humidity level in ground</p>
                 <div class="progress_bar" style="width:100%">
@@ -163,7 +164,5 @@ if ($flowerCount == 0) {
         }
     });
 
-
 </script>
-
 </html>
